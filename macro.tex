@@ -1,0 +1,33 @@
+\usepackage{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{lineno}
+\usepackage{multicol}
+\usepackage{ragged2e}
+
+% drawing stuffs
+\usepackage{tikz, tkz-orm, pgfplots}
+\usetikzlibrary{arrows,shapes,automata,backgrounds,petri,decorations.markings}
+\usetikzlibrary{matrix,positioning,decorations.pathreplacing,calc,tikzmark}
+\pgfplotsset{width=7.5cm,compat=1.17}
+\usepgfplotslibrary{fillbetween}
+
+% links
+\usepackage{hyperref, bookmark}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!20!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+% work specific packages
+% \usepackage{ebproof}
+
+\newcommand{\notes}[1]{}
+
+\ifthenelse{\value{notes} > 0}{
+    \renewcommand{\notes}[1]{{\tiny #1}}
+}{}
