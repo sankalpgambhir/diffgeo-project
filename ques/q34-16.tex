@@ -12,11 +12,7 @@
     We just proved Metrizable \(\Leftrightarrow\) Hausdorff, so what gives?
     \pause
     There is something quite important we used to establish all the ideas in
-    that problem. 
-    \pause
-    \emph{Finiteness.} \pause In particular for the context of this problem,
-    call it \emph{first countability}\pause, to be able to list the elements of
-    the set in question finitely. % This will become important later.
+    that problem. \pause \emph{Finiteness.}
 
 \end{frame}
 
@@ -41,18 +37,10 @@
 \begin{frame}
     \frametitle{Chasing Broken Bridges}
 
-    % infinite countable discrete space
-    \begin{figure}
-        \scalebox{1.4}{\input{fig/sankalp/countable_metrizable.pdf_tex}}
-    \end{figure}
-
-    % subset of euclidean space still
-
-    \pause
-
-    \begin{center}
-        \emph{Still Metrizable!}
-    \end{center}
+    We are now looking for a Hausdorff space that is not metrizable. It cannot
+    be discrete, since we have the discrete metric for it, regardless of
+    finiteness, i.e., the implication edge \(1\rightarrow 2\) holds without
+    finiteness too.
 
 \end{frame}
 
@@ -83,38 +71,58 @@
 
 \end{frame}
 
+% \begin{frame}
+%     \frametitle{Countability}
+
+%     We broke our `weakest link' by removing the assumption of being able to
+%     finitely count the set.\pause The next step is to remove the assumption that
+%     we are able to \emph{count at all}.
+%     % The discreteness was a ruse all along
+
+% \end{frame}
+
 \begin{frame}
-    \frametitle{Countability}
+    \frametitle{A Chasm}
 
-    We broke our `weakest link' by removing the assumption of being able to
-    finitely count the set, \emph{first countability}.\pause The next step is to
-    remove the assumption that we are able to \emph{count at all}.\pause This is
-    second countability.
-
-    \pause
-
-    In fact, every second countable Hausdorff space is metrizable.
-    % The discreteness was a ruse all along
+    We construct a topology from a metric space by constructing open balls
+    around points. \pause So, perhaps we can break metrizability by taking a
+    Hausdorff space, and creating gaps in it that cannot be worked around with a
+    metric. % real numbers are in particular, always finite individually
 
 \end{frame}
 
 \begin{frame}
-    \frametitle{Shepherd's Nightmare}
+    \frametitle{A Chasm}
 
-    Combining everything, consider the space
-
-    \begin{gather*}
-        (\topx, \tau) \in \catTop\\
-        \topx \textnormal{ is not second-countable}\\
-        \forall x \in \topx \; x \in \tau \textnormal{ (discrete topology)}
-    \end{gather*}
+    Combining everything, consider the space \((\reals, \tau)\) with \(\tau\)
+    being the usual topology on the real line. It is clearly Hausdorff, and
+    metrizable.\pause Construct from this a new space \(*\reals\) from \reals
+    with an added point \(\omega\), a number larger than any finite real. Choose
+    the set \(\{\omega\}\) to additionally be open. \pause We see that there are
+    suddenly issues with defining a metric on this space.
 
 \end{frame}
 
 \begin{frame}
-    \frametitle{Shepherd's Nightmare}
+    \frametitle{A Chasm}
 
-    As a visual example, consider \(\reals^2\) with the discrete topology.
-    \pause If a metric existed on this space, 
+    \begin{proof}[Non-metrizability of \(*\reals\)]
+        If possible, suppose there exists a metric such that it induces the
+        topology defined, \(d:*\reals \times *\reals \to \reals\), defined as
+        usual over the 'finite' numbers. \pause If \(\exists x \in \reals,
+        f:\reals \to \reals\; d(x, \omega) = f(x)\), then pick any two points
+        \(x, y \not = \omega\), such that \(d(x, y) = a\) for some real \(a\). 
+        
+        \pause 
+        Then by triangle inequality we must have
+        \begin{gather*}
+            d(x, y) \leq d(x, \omega) + d(\omega, y) \textnormal{ , so} \\
+            a \leq f(x) + f(y)
+        \end{gather*}
+
+        Since \(a, x, \textnormal{ and } y\) were arbitrary, \(f(x)\) must be
+        unbounded \(\forall x\), and thus \(d\) is not a proper metric. This is
+        a contradiction. 
+    \end{proof}
 
 \end{frame}
