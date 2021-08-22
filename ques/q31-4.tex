@@ -1,49 +1,88 @@
 \begin{frame}
-\frametitle{Question 2}
-\textbf{Check that the diamond and square metrics on $\bm{\mathbb{R}^n}$ are indeed metrics. Show that the euclidean metric on $\bm{\mathbb{R}^n}$ is indeed a metric. (The triangle inequality in this context is equivalent to Minkowski’s inequality.)}\hfill\break
+\frametitle{Problem Set 3.1 - 4}
+\textbf{Check that the diamond and square metrics on $\bm{\mathbb{R}^n}$ are
+indeed metrics. Show that the euclidean metric on $\bm{\mathbb{R}^n}$ is indeed
+a metric. (The triangle inequality in this context is equivalent to Minkowski’s
+inequality.)}\hfill\break
 \hfill\break
 For any $x, y \in \mathbb{R}^n $ where $v = (v_1, v_2,...,v_n)$: 
 \begin{enumerate}
     \item Diamond metric: $d_1(x,y) = \sum_{i\in \mathcal{I}} |x_i - y_i| $
-    \item Euclidean metric: $d_2(x,y) = \sqrt{\sum_{i\in \mathcal{I}} |x_i - y_i|^2} $
-    \item Square metric: $d_{\infty}(x,y) = max_{i\in \mathcal{I}}\{|x_i - y_i|\}$
+    \item Euclidean metric: $d_2(x,y) = \sqrt{\sum_{i\in \mathcal{I}} |x_i -
+    y_i|^2} $
+    \item Square metric: $d_{\infty}(x,y) = max_{i\in \mathcal{I}}\{|x_i -
+    y_i|\}$
 \end{enumerate}
 \hfill\break
-Now we just have to show that each of these metrics satisfy the four conditions that characterise metric spaces. We will look at each metric separately.
+Now we just have to show that each of these metrics satisfy the four conditions
+that characterise metric spaces. We will look at each metric separately.
 \end{frame}
 
 \begin{frame}
-\frametitle{Question 2 contd.}
 \textit{The Diamond metric}\hfill\break
 \begin{enumerate}
-    \item $d_1(x,x) = \sum_{i=1}^{n} |x_i - x_i| = 0$ for all $i\in \mathcal{I}.$
-    \item Suppose $d_1(x,y) = \sum_{i=1}^{n} |x_i - y_i| = 0$. We know that that for $p \in \mathbb{R}, |p|\geq 0$ and $|p| = 0 \iff p = 0$ (positive definite). Therefore for the assumption to hold, $|x_i - y_i| = 0$ for all $i \in \mathcal{I}$. Hence $x_i = y_i$ for all $i \in \mathcal{I}$. This shows that for $x\neq y$, $d_1(x,y)>0$.
-    \item We can rewrite $d_1(x,y) = \sum_{i=1}^{n} |x_i - y_i| = \sum_{i=1}^{n} |- (- x_i + y_i)| = \sum_{i=1}^{n} |(- x_i + y_i)| = \sum_{i=1}^{n} |y_i - x_i |.$ Therefore, $d_1(x,y) = d_1(y,x).$
-    \item Using the triangle inequality $|(x_i - y_i) + (y_i - z_i)| \leq |x_i - y_i| + |y_i - z_i| \rightarrow |x_i - z_i| \leq |x_i - y_i| + |y_i - z_i|$. Taking the summation, $\sum_{i=1}^{n}|x_i - z_i| \leq \sum_{i=1}^{n}|x_i - y_i| + \sum_{i=1}^{n}|y_i - z_i|$. Hence, we have shown, $d_1(x,z) \leq d_1(x,y)+d_1(y,z).$
+    \item $d_1(x,x) = \sum_{i=1}^{n} |x_i - x_i| = 0$ for all $i\in
+    \mathcal{I}.$
+    \item Suppose $d_1(x,y) = \sum_{i=1}^{n} |x_i - y_i| = 0$. We know that that
+    for $p \in \mathbb{R}, |p|\geq 0$ and $|p| = 0 \iff p = 0$ (positive
+    definite). Therefore for the assumption to hold, $|x_i - y_i| = 0$ for all
+    $i \in \mathcal{I}$. Hence $x_i = y_i$ for all $i \in \mathcal{I}$. This
+    shows that for $x\neq y$, $d_1(x,y)>0$.
+    \item We can rewrite $d_1(x,y) = \sum_{i=1}^{n} |x_i - y_i| = \sum_{i=1}^{n}
+    |- (- x_i + y_i)| = \sum_{i=1}^{n} |(- x_i + y_i)| = \sum_{i=1}^{n} |y_i -
+    x_i |.$ Therefore, $d_1(x,y) = d_1(y,x).$
+    \item Using the triangle inequality $|(x_i - y_i) + (y_i - z_i)| \leq |x_i -
+    y_i| + |y_i - z_i| \rightarrow |x_i - z_i| \leq |x_i - y_i| + |y_i - z_i|$.
+    Taking the summation, $\sum_{i=1}^{n}|x_i - z_i| \leq \sum_{i=1}^{n}|x_i -
+    y_i| + \sum_{i=1}^{n}|y_i - z_i|$. Hence, we have shown, $d_1(x,z) \leq
+    d_1(x,y)+d_1(y,z).$
 \end{enumerate}
 \end{frame}
 
 \begin{frame}
-\frametitle{Question 2 contd.}
 \textit{The Euclidean metric}\hfill\break
 \begin{enumerate}
-    \item $d_2(x,x) = \sqrt{\sum_{i=1}^{n} |x_i - x_i|^2} = 0$ for all $i\in \mathcal{I}.$
-    \item Suppose $d_2(x,y) = \sqrt{\sum_{i=1}^{n} |x_i - y_i|^2} = 0$. We know that that for $p \in \mathbb{R}, \sqrt{p}\geq0$ and $\sqrt{p} = 0 \iff p = 0$ (positive definite). Therefore for the assumption to hold, $\sum_{i=1}^{n} |x_i - y_i|^2 = 0$ for all $i \in \mathcal{I}$. Further, $ |x_i - y_i|^2 = 0$ for all $i \in \mathcal{I}$. Hence $x_i = y_i$ for all $i \in \mathcal{I}$. This shows that for $x\neq y$, $d_2(x,y)>0$.
-    \item We can rewrite $d_2(x,y) = \sqrt{\sum_{i=1}^{n} |x_i - y_i|^2} = \sqrt{\sum_{i=1}^{n} |- (- x_i + y_i)|^2} = \sqrt{\sum_{i=1}^{n} |(- x_i + y_i)|^2} = \sqrt{\sum_{i=1}^{n} |y_i - x_i|^2}.$ Therefore, $d_2(x,y) = d_2(y,x).$
-    \item Minkowski's inequality* says that $(\sum_{k=1}^{n}|\alpha_k+\beta_k|^p)^\frac{1}{p} \leq (\sum_{k=1}^{n}|\alpha_k|^p)^\frac{1}{p} + (\sum_{k=1}^{n}|\beta_k|^p)^\frac{1}{p}$. If we substitute $\alpha_k = x_k-y_k$ and $\beta_k = y_k - z_k$, we get the desired triangle inequality.
-    $ \sqrt{\sum_{i=1}^{n} |x_i - z_i|^2} \leq  \sqrt{\sum_{i=1}^{n} |x_i - y_i|^2} +  \sqrt{\sum_{i=1}^{n} |y_i - z_i|^2}$.
-    Hence, we have shown, $d_2(x,z) \leq d_2(x,y)+d_2(y,z).$
+    \item $d_2(x,x) = \sqrt{\sum_{i=1}^{n} |x_i - x_i|^2} = 0$ for all $i\in
+    \mathcal{I}.$
+    \item Suppose $d_2(x,y) = \sqrt{\sum_{i=1}^{n} |x_i - y_i|^2} = 0$. We know
+    that that for $p \in \mathbb{R}, \sqrt{p}\geq0$ and $\sqrt{p} = 0 \iff p =
+    0$ (positive definite). Therefore for the assumption to hold,
+    $\sum_{i=1}^{n} |x_i - y_i|^2 = 0$ for all $i \in \mathcal{I}$. Further, $
+    |x_i - y_i|^2 = 0$ for all $i \in \mathcal{I}$. Hence $x_i = y_i$ for all $i
+    \in \mathcal{I}$. This shows that for $x\neq y$, $d_2(x,y)>0$.
+    \item We can rewrite $d_2(x,y) = \sqrt{\sum_{i=1}^{n} |x_i - y_i|^2} =
+    \sqrt{\sum_{i=1}^{n} |- (- x_i + y_i)|^2} = \sqrt{\sum_{i=1}^{n} |(- x_i +
+    y_i)|^2} = \sqrt{\sum_{i=1}^{n} |y_i - x_i|^2}.$ Therefore, $d_2(x,y) =
+    d_2(y,x).$
+    \item Minkowski's inequality* says that
+    $(\sum_{k=1}^{n}|\alpha_k+\beta_k|^p)^\frac{1}{p} \leq
+    (\sum_{k=1}^{n}|\alpha_k|^p)^\frac{1}{p} +
+    (\sum_{k=1}^{n}|\beta_k|^p)^\frac{1}{p}$. If we substitute $\alpha_k =
+    x_k-y_k$ and $\beta_k = y_k - z_k$, we get the desired triangle inequality.
+    $ \sqrt{\sum_{i=1}^{n} |x_i - z_i|^2} \leq  \sqrt{\sum_{i=1}^{n} |x_i -
+    y_i|^2} +  \sqrt{\sum_{i=1}^{n} |y_i - z_i|^2}$. Hence, we have shown,
+    $d_2(x,z) \leq d_2(x,y)+d_2(y,z).$
 \end{enumerate}
 \end{frame}
 
 \begin{frame}
-\frametitle{Question 2 contd.}
 \textit{The Diamond metric}\hfill\break
 \begin{enumerate}
-    \item $d_1(x,x) = \sum_{i=1}^{n} |x_i - x_i| = 0$ for all $i\in \mathcal{I}.$
-    \item Suppose $d_1(x,y) = \sum_{i=1}^{n} |x_i - y_i| = 0$. We know that that for $p \in \mathbb{R}, |p|\geq 0$ and $|p| = 0 \iff p = 0$ (positive definite). Therefore for the assumption to hold, $|x_i - y_i| = 0$ for all $i \in \mathcal{I}$. Hence $x_i = y_i$ for all $i \in \mathcal{I}$. This shows that for $x\neq y$, $d_1(x,y)>0$.
-    \item We can rewrite $d_1(x,y) = \sum_{i=1}^{n} |x_i - y_i| = \sum_{i=1}^{n} |- (- x_i + y_i)| = \sum_{i=1}^{n} |(- x_i + y_i)| = \sum_{i=1}^{n} |y_i - x_i |.$ Therefore, $d_1(x,y) = d_1(y,x).$
-    \item Using the triangle inequality $|(x_i - y_i) + (y_i - z_i)| \leq |x_i - y_i| + |y_i - z_i| \rightarrow |x_i - z_i| \leq |x_i - y_i| + |y_i - z_i|$. Taking the summation, $\sum_{i=1}^{n}|x_i - z_i| \leq \sum_{i=1}^{n}|x_i - y_i| + \sum_{i=1}^{n}|y_i - z_i|$. Hence, we have shown, $d_1(x,z) \leq d_1(x,y)+d_1(y,z).$
+    \item $d_1(x,x) = \sum_{i=1}^{n} |x_i - x_i| = 0$ for all $i\in
+    \mathcal{I}.$
+    \item Suppose $d_1(x,y) = \sum_{i=1}^{n} |x_i - y_i| = 0$. We know that that
+    for $p \in \mathbb{R}, |p|\geq 0$ and $|p| = 0 \iff p = 0$ (positive
+    definite). Therefore for the assumption to hold, $|x_i - y_i| = 0$ for all
+    $i \in \mathcal{I}$. Hence $x_i = y_i$ for all $i \in \mathcal{I}$. This
+    shows that for $x\neq y$, $d_1(x,y)>0$.
+    \item We can rewrite $d_1(x,y) = \sum_{i=1}^{n} |x_i - y_i| = \sum_{i=1}^{n}
+    |- (- x_i + y_i)| = \sum_{i=1}^{n} |(- x_i + y_i)| = \sum_{i=1}^{n} |y_i -
+    x_i |.$ Therefore, $d_1(x,y) = d_1(y,x).$
+    \item Using the triangle inequality $|(x_i - y_i) + (y_i - z_i)| \leq |x_i -
+    y_i| + |y_i - z_i| \rightarrow |x_i - z_i| \leq |x_i - y_i| + |y_i - z_i|$.
+    Taking the summation, $\sum_{i=1}^{n}|x_i - z_i| \leq \sum_{i=1}^{n}|x_i -
+    y_i| + \sum_{i=1}^{n}|y_i - z_i|$. Hence, we have shown, $d_1(x,z) \leq
+    d_1(x,y)+d_1(y,z).$
 \end{enumerate}
 \end{frame}
 
@@ -51,9 +90,18 @@ Now we just have to show that each of these metrics satisfy the four conditions 
 \frametitle{Question 2 contd.}
 \textit{The Square metric}\hfill\break
 \begin{enumerate}
-    \item $d_{\infty}(x,x) = max_{i\in \mathcal{I}}\{|x_i - x_i|\} = max\{0, 0,..,0\} = 0$ for all $i\in \mathcal{I}.$
-    \item Suppose $d_{\infty}(x,y) = max_{i\in \mathcal{I}}\{|x_i - y_i|\} = 0$ at $i=i*$. We know that that for $p \in \mathbb{R}, |p|\geq 0$ and $|p| = 0 \iff p = 0$ (positive definite). Therefore for the assumption to hold, $|x_i - y_i| \leq 0$ for all $i \in \mathcal{I}, i\neq i*$ $\Rightarrow |x_i - y_i| = 0$. Hence $x_i = y_i$ for all $i \in \mathcal{I}$. This shows that for $x\neq y$, $d_{\infty}(x,y)>0$.
-    \item We can rewrite $d_{\infty}(x,y) = max_{i\in \mathcal{I}}\{|x_i - y_i|\} = max_{i\in \mathcal{I}}\{|- (- x_i + y_i)|\} = max_{i\in \mathcal{I}}\{|(- x_i + y_i)|\} = max_{i\in \mathcal{I}}\{|y_i - x_i|\}.$ Therefore, $d_{\infty}(x,y) = d_{\infty}(y,x).$
+    \item $d_{\infty}(x,x) = max_{i\in \mathcal{I}}\{|x_i - x_i|\} = max\{0,
+    0,..,0\} = 0$ for all $i\in \mathcal{I}.$
+    \item Suppose $d_{\infty}(x,y) = max_{i\in \mathcal{I}}\{|x_i - y_i|\} = 0$
+    at $i=i*$. We know that that for $p \in \mathbb{R}, |p|\geq 0$ and $|p| = 0
+    \iff p = 0$ (positive definite). Therefore for the assumption to hold, $|x_i
+    - y_i| \leq 0$ for all $i \in \mathcal{I}, i\neq i*$ $\Rightarrow |x_i -
+    y_i| = 0$. Hence $x_i = y_i$ for all $i \in \mathcal{I}$. This shows that
+    for $x\neq y$, $d_{\infty}(x,y)>0$.
+    \item We can rewrite $d_{\infty}(x,y) = max_{i\in \mathcal{I}}\{|x_i -
+    y_i|\} = max_{i\in \mathcal{I}}\{|- (- x_i + y_i)|\} = max_{i\in
+    \mathcal{I}}\{|(- x_i + y_i)|\} = max_{i\in \mathcal{I}}\{|y_i - x_i|\}.$
+    Therefore, $d_{\infty}(x,y) = d_{\infty}(y,x).$
     \item Need help here*
 \end{enumerate}
 \end{frame}
@@ -63,7 +111,10 @@ Now we just have to show that each of these metrics satisfy the four conditions 
 \begin{equation*}
     (\sum_{k=1}^{n}|\alpha_k+\beta_k|^p)^\frac{1}{p} \leq (\sum_{k=1}^{n}|\alpha_k|^p)^\frac{1}{p} + (\sum_{k=1}^{n}|\beta_k|^p)^\frac{1}{p}
 \end{equation*}
-$(\sum_{k=1}^{n}|\alpha_k|^p)^\frac{1}{p} = ||\alpha||_p$ is called the p-norm.The proof makes use of Holder's inequality. It is first shown that if $\alpha$ and $\beta$ have a finite p-norm, so does $\alpha+\beta$ (convexity arguments).
+$(\sum_{k=1}^{n}|\alpha_k|^p)^\frac{1}{p} = ||\alpha||_p$ is called the
+p-norm.The proof makes use of Holder's inequality. It is first shown that if
+$\alpha$ and $\beta$ have a finite p-norm, so does $\alpha+\beta$ (convexity
+arguments).
 \begin{equation*}
     ||\alpha+\beta||_p^p = \int |\alpha+\beta|^p \,d\mu \leq \int (|\alpha|+|\beta|)|\alpha+\beta|^{p-1} \,d\mu
 \end{equation*}
@@ -84,7 +135,7 @@ For the case of the Euclidean metric, the inequality boils down to:
     \sqrt{\sum_{i=1}^{n} |x_i - z_i|^2} \leq  \sqrt{\sum_{i=1}^{n} |x_i - y_i|^2} +  \sqrt{\sum_{i=1}^{n} |y_i - z_i|^2}
 \end{equation*}
 For $n=1$, we retrieve the same inequality as that of the diamond metric, i.e.,
-$\sqrt{|x_1 - z_1|^2} \leq  \sqrt{|x_1 - y_1|^2} +  \sqrt{|y_1 - z_1|^2} \Rightarrow|x_1 - z_1|\leq |x_1 - y_1|+|y_1 - z_1|$
-\hfill\break
+$\sqrt{|x_1 - z_1|^2} \leq  \sqrt{|x_1 - y_1|^2} +  \sqrt{|y_1 - z_1|^2}
+\Rightarrow|x_1 - z_1|\leq |x_1 - y_1|+|y_1 - z_1|$ \hfill\break
 Should I write something for $n=2$?*
 \end{frame}

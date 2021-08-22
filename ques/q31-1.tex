@@ -1,6 +1,7 @@
 \begin{frame}
     \frametitle{Metric Spaces}
-A \textit{metric space} is a set $X$ equipped with a map $d: X\times X \rightarrow \mathbb{R}$ such that :
+A \textit{metric space} is a set $X$ equipped with a map $d: X\times X
+\rightarrow \mathbb{R}$ such that :
 \begin{enumerate}
     \item $d(x,x) = 0$
     \item $d(x,y)>0$ if $x\neq y$
@@ -14,15 +15,18 @@ $d$: distance function or metric
 \end{frame}
 
 \begin{frame}
-\frametitle{Question 1}
-\textbf{Show that: For any points $\bm{a,b,x,y}$ in a metric space X,} $\bm{|d(a,b) - d(x,y)| \leq d(a,x) + d(b,y)}$\hfill\break
+\frametitle{Problem Set 3.1 - 1}
+\textbf{Show that: For any points $\bm{a,b,x,y}$ in a metric space X,}
+$\bm{|d(a,b) - d(x,y)| \leq d(a,x) + d(b,y)}$\hfill\break
 \hfill\break
-Using the property of the absolute value function $|a|\leq b \iff -b\leq a \leq b$ we get:\hfill\break
+Using the property of the absolute value function $|a|\leq b \iff -b\leq a \leq
+b$ we get:\hfill\break
 \begin{equation*}
 - d(a,x) - d(b,y) \leq d(a,b) - d(x,y) \leq  d(a,x) + d(b,y)
 \end{equation*}
 \hfill\break
-Now we focus on the a term $\alpha \triangleq d(a,x) + d(x, y)  + d(y, b)$. Using property (4):
+Now we focus on the a term $\alpha \triangleq d(a,x) + d(x, y)  + d(y, b)$.
+Using property (4):
 \begin{equation*}
 d(a,b) \leq d(a,x) + d(x, b) \leq  d(a,x) + d(x, y)  + d(y, b) 
 \end{equation*}
@@ -30,7 +34,9 @@ Rearranging terms and using property (3) we obtain:
 \begin{equation*}
 d(a,b) - d(x,y) \leq  d(a,x) + d(b,y)
 \end{equation*}
-Which is the RHS of the inequality. Similarly, the LHS can be proven*. \hfill\break
-*Modify (4) into $d(x,z) - d(y,z) \leq d(x,y)$ and $\alpha = -d(a,x) -d(x, y)  + d(y, b)$
+Which is the RHS of the inequality. Similarly, the LHS can be proven*.
+\hfill\break
+*Modify (4) into $d(x,z) - d(y,z) \leq d(x,y)$ and $\alpha = -d(a,x) -d(x, y)  +
+d(y, b)$
 \end{frame}
 
