@@ -96,7 +96,7 @@
 
     Combining everything, consider the space \((\reals, \tau)\) with \(\tau\)
     being the usual topology on the real line. It is clearly Hausdorff, and
-    metrizable.\pause Construct from this a new space \(*\reals\) from \reals
+    metrizable.\pause Construct from this a new space \(*\reals\) from \reals\,
     with an added point \(\omega\), a number larger than any finite real. Choose
     the set \(\{\omega\}\) to additionally be open. \pause We see that there are
     suddenly issues with defining a metric on this space.
@@ -106,12 +106,24 @@
 \begin{frame}
     \frametitle{A Chasm}
 
+    Suppose we were able to metrize this space. That would imply we have defined
+    a \emph{real} distance between all points on the real line and \(\omega\)
+    \pause, but this would imply that \(\omega\) is contained within some finite
+    open balls centered at said points. Intuitively, this does not make any
+    sense per the definition of \(\omega\).
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{A Chasm}
+
     \begin{proof}[Non-metrizability of \(*\reals\)]
         If possible, suppose there exists a metric such that it induces the
-        topology defined, \(d:*\reals \times *\reals \to \reals\), defined as
-        usual over the 'finite' numbers. \pause If \(\exists x \in \reals,
-        f:\reals \to \reals\; d(x, \omega) = f(x)\), then pick any two points
-        \(x, y \not = \omega\), such that \(d(x, y) = a\) for some real \(a\). 
+        defined topology on \(*R\), \(d:*\reals \times *\reals \to \reals\),
+        defined as usual over the 'finite' numbers. \pause If \(\exists x \in
+        \reals, f:\reals \to \reals\; d(x, \omega) = f(x)\), then pick any two
+        points \(x, y \not = \omega\), such that \(d(x, y) = a\) for some real
+        \(a\). 
         
         \pause 
         Then by triangle inequality we must have
