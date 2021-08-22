@@ -117,10 +117,10 @@
     \begin{proof}[Non-metrizability of \(*\reals\)]
         If possible, suppose there exists a metric such that it induces the
         defined topology on \(*R\), \(d:*\reals \times *\reals \to \reals\),
-        defined as usual over the 'finite' numbers. \pause If \(\exists x \in
-        \reals, f:\reals \to \reals\; d(x, \omega) = f(x)\), then pick any two
-        points \(x, y \not = \omega\), such that \(d(x, y) = a\) for some real
-        \(a\). 
+        defined as usual over the 'finite' numbers. \pause So \(\exists f:\reals
+        \to \reals, \forall x \in \reals \;d(x, \omega) = f(x)\), then pick any
+        two points \(x, y \not = \omega\), such that \(d(x, y) = a\) for some
+        real \(a\). 
         
         \pause 
         Then by triangle inequality we must have
@@ -130,8 +130,9 @@
         \end{gather*}
 
         Since \(a, x, \textnormal{ and } y\) were arbitrary, \(f(x)\) must be
-        unbounded \(\forall x\), and thus \(d\) is not a proper metric. This is
-        a contradiction. 
+        unbounded \(\forall x\), and thus \(d\) is not a proper metric. This
+        happens because \(\omega\) is a transfinite number. We have a
+        contradiction. 
     \end{proof}
 
 \end{frame}
