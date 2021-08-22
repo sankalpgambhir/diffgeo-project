@@ -37,10 +37,10 @@ topologies on any set \(X\) given by \(\tau_{disc} = 2^X\) and \(\tau_{indisc} =
 \textsf{Top}\) and \textit{indisc}: \(\textsf{Set}\to \textsf{Top}\) , defined
 in the following way 
 
-\begin{align*}
-    \textit{disc}(X) &\mapsto (X, \tau_{disc}) \\
-    \textit{indisc}(X) &\mapsto (X,\tau_{indisc}) 
-\end{align*}
+\begin{gather*}
+    \textit{disc}(X) \mapsto (X, \tau_{disc}) \\
+    \textit{indisc}(X) \mapsto (X,\tau_{indisc}) 
+\end{gather*}
 And for any function \(f \in \textsf{Set}(X,Y)\), \(f\mapsto f\). 
 % Rewrite this later . Check Swapneel's way of writing this and write in the
 % same style. 
@@ -71,11 +71,11 @@ indiscrete topologies define the required functors.
     
 For the second part, we have to show that these are left adjoint and right
 adjoints respectively to the forgetful functor defined as follows: 
-\begin{align*}
+\begin{gather*}
     frg : \textsf{Top} \to \textsf{Set} \\
     (X, \tau_X ) \mapsto X \\
     f \in \textsf{Top}((X,\tau_X),(Y,tau_Y ) \mapsto f \in \textsf{Set}(X,Y) 
-\end{align*}
+\end{gather*}
 ie we are forgetting the underlying topology and viewing the function \(f\) as a
 morphism between sets. 
 \end{frame}
