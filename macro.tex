@@ -8,6 +8,8 @@
 \usepackage{ragged2e}
 
 % drawing stuffs
+\usepackage{pstricks}
+% \usepackage{auto-pst-pdf}
 \usepackage{tikz, tkz-orm, pgfplots}
 \usetikzlibrary{arrows,shapes,automata,backgrounds,petri,decorations.markings}
 \usetikzlibrary{matrix,positioning,decorations.pathreplacing,calc,tikzmark}
@@ -31,3 +33,9 @@
 \ifthenelse{\value{notes} > 0}{
     \renewcommand{\notes}[1]{{\tiny #1}}
 }{}
+
+% actual macros
+\newcommand{\reals}{\ensuremath{\mathbb{R}}}
+\newcommand{\naturals}{\ensuremath{\mathbb{N}}}
+\newcommand{\topx}{\ensuremath{X~}}
+\newcommand{\catTop}{\textsf{Top}}

@@ -1,6 +1,4 @@
 
-\newcommand{\topx}{\ensuremath{X~}}
-\newcommand{\catTop}{\textsf{Top}}
 
 \begin{frame}
     \frametitle{Exercise 3.4 - 15}
@@ -36,12 +34,13 @@
     \frametitle{\(1 \rightarrow 2\) --- Discrete \(\rightarrow\) Metrizable}
 
     % discrete space
-    show discrete space
+    \begin{figure}
+        \scalebox{1.4}{\input{fig/sankalp/metrizable.pdf_tex}}
+    \end{figure}
 
     \pause
-
-    % map to real line
-    real line
+    This is equivalent to finding an order on the set and identifying it with
+    \naturals. It only requires the Axiom of Choice!
 
 \end{frame}
 
@@ -49,10 +48,20 @@
     \frametitle{\(2 \rightarrow 3\) --- Metrizable \(\rightarrow\) Hausdorff}
 
     % metrizable, existence of metric
-    metric
-
+    Given that the space, say \((\topx, \tau)\), is metrizable, there exists a
+    metric \(d: \topx \times \topx \to \reals\) which induces the topology given
+    by \(\tau\). \pause
+    %
     % construct ball and shrink
-    ball
+    Use this metric to define open balls \(B_i, B_j\) for any pair of points in
+    \topx, \(x_i, x_j\). \pause By shrinking these open balls, we can create
+    non-intersecting open sets as required.
+    %
+    \pause
+    %
+    \begin{figure}
+        \scalebox{1}{\input{fig/sankalp/separable.pdf_tex}}
+    \end{figure}
 
 \end{frame}
 
@@ -60,13 +69,32 @@
     \frametitle{\(3 \rightarrow 1\) --- Hausdorff \(\rightarrow\) Discrete}
 
     % construct Hausdorff sets
-    Hausdorff
+    We know by the Hausdorff property that any two points are separable by
+    neighbourhoods.
+
+    \pause
 
     % show point exclusion
-    exclusion
 
-    % intersect
-    intersect
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \scalebox{1}{\input{fig/sankalp/hausdorff.pdf_tex}}
+            \end{figure}
+        \end{column}
+        %
+        \begin{column}{0.5\textwidth}
+            % intersect
+            \pause
+            \begin{equation*}
+                \forall x_i \bigcap_{x_j\in X} T_i(x_j) = {x_i},
+            \end{equation*}\pause
+            \begin{equation*}
+                x_i \in \tau~.
+            \end{equation*}     
+        \end{column}
+    \end{columns}
+
 
 \end{frame}
 
