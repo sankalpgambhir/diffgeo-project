@@ -26,7 +26,7 @@
 
         % \pause
 
-        \draw[->] (1) -- node[midway, above right] {? Map to Euclidean Space} (2);
+        \draw[->] (1) -- node[midway, above right] {? Discrete Metric} (2);
         \draw[->] (2) -- node[midway, below] {? Metric-induced neighbourhoods} (3);
         \draw[->] (3) -- node[midway, above left] {\textcolor{red}{\(X\) Neighbourhood exclusion}} (1);
 
@@ -54,20 +54,19 @@
 
         % \pause
 
-        \draw[->, color=gray] (1) -- node[midway, above right] {\Large ?} (2) [dashed];
-        \draw[->, color=gray] (3) -- node[midway, below] {\Large ?} (2) [dashed];
+        \draw[->] (1) -- node[midway, above right] {\(\checkmark\) Discrete Metric} (2);
+        \draw[->, color=orange] (3) [bend right=-15] to node[midway, below] {\Large ?} (2) [dashed];
+        \draw[->, color=gray] (2) [bend left=15] to node[midway, below] {? Metric-induced neighbourhoods} (3) [dashed];
         \draw[color=red] (3) -- node[midway, above left] {\textcolor{red}{\(X\) Neighbourhood exclusion}}(1) [dashed];
 
     \end{tikzpicture}
 
     \pause
 
-    \begin{center}
-        We have lost some information about the internal relationships while
-        breaking one edge. \pause If finiteness doesn't break things enough,
-        what did we use that might?
-        % So our diagram order was chosen carefully to be annoying
-    \end{center}
+    We have lost some information about the internal relationships while
+    breaking one edge. \pause If finiteness doesn't break things enough,
+    what did we use that might?
+    % So our diagram order was chosen carefully to be annoying
 
 \end{frame}
 
@@ -95,7 +94,7 @@
 
     Combining everything, consider the space \((\reals, \tau)\) with \(\tau\)
     being the usual topology on the real line. It is clearly Hausdorff, and
-    metrizable.\pause Construct from this a new space \(*\reals\) from \reals\,
+    metrizable. \pause Construct from this a new space \(*\reals\) from \reals\,
     with an added point \(\omega\), a number larger than any finite real. Choose
     the set \(\{\omega\}\) to additionally be open. \pause We see that there are
     suddenly issues with defining a metric on this space.
@@ -116,20 +115,20 @@
 
     \begin{proof}[Non-metrizability of \(*\reals\)]
         If possible, suppose there exists a metric such that it induces the
-        defined topology on \(*R\), \(d:*\reals \times *\reals \to \reals\),
-        defined as usual over the 'finite' numbers. \pause So \(\exists f:\reals
-        \to \reals, \forall x \in \reals \;d(x, \omega) = f(x)\), then pick any
-        two points \(x, y \not = \omega\), such that \(d(x, y) = a\) for some
-        real \(a\). 
+        defined topology on \(*\reals\), \(d:*\reals \times *\reals \to
+        \reals\), defined as usual over the 'finite' numbers. \pause So
+        \(\exists f:\reals \to \reals, \text{such that }\forall x \in \reals
+        \;d(x, \omega) = f(x)\). Now, pick any two points \(x, y \not =
+        \omega\), such that \(d(x, y) = a\) for some real \(a\). 
         
         \pause 
-        Then by triangle inequality we must have
+        Then by the triangle inequality, we must have
         \begin{gather*}
             d(x, y) \leq d(x, \omega) + d(\omega, y) \textnormal{ , so} \\
-            a \leq f(x) + f(y)
+            a \leq f(x) + f(y)~.
         \end{gather*}
 
-        Since \(a, x, \textnormal{ and } y\) were arbitrary, \(f(x)\) must be
+        Since \(a, x, \textnormal{and } y\) were arbitrary, \(f(x)\) must be
         unbounded \(\forall x\), and thus \(d\) is not a proper metric. This
         happens because \(\omega\) is a transfinite number. We have a
         contradiction. 

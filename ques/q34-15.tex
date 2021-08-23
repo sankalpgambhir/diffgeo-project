@@ -3,12 +3,12 @@
 \begin{frame}
     \frametitle{Exercise 3.4 - 15}
     \textit{Problem Statement}\\
-    Let \topx be a \emph{finite} topological space. Show that the following are
+    Let \(\topx\) be a \emph{finite} topological space. Show that the following are
     equivalent:
     \begin{enumerate}
-        \item \topx has the discrete topology.
-        \item \topx is metrizable.
-        \item \topx is Hausdorff.
+        \item \(\topx\) has the discrete topology.
+        \item \(\topx\) is metrizable.
+        \item \(\topx\) is Hausdorff.
     \end{enumerate}
 \end{frame}
 
@@ -22,9 +22,9 @@
 
         % \pause
 
-        \draw[->] (1) -- node[midway, above] {?} (2);
-        \draw[->] (2) -- node[midway, below] {?} (3);
-        \draw[->] (3) -- node[midway, above] {?} (1);
+        \draw[->, color=gray] (1) -- node[midway, above] {\Large ?} (2) [dashed];
+        \draw[->, color=gray] (2) -- node[midway, below] {\Large ?} (3) [dashed];
+        \draw[->, color=gray] (3) -- node[midway, above] {\Large ?} (1) [dashed];
 
     \end{tikzpicture}
 
@@ -34,15 +34,34 @@
     \frametitle{\(1 \rightarrow 2\) --- Discrete \(\rightarrow\) Metrizable}
 
     % discrete space
-    \begin{figure}
-        \scalebox{1.4}{\input{fig/sankalp/metrizable.pdf_tex}}
-    \end{figure}
+    % \begin{figure}
+    %     \scalebox{1.4}{\input{fig/sankalp/metrizable.pdf_tex}}
+    % \end{figure}
+
+    We've already seen this done by Parth. We choose the discrete metric 
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{gather*}
+                \topx \in \textsf{Metric}\\
+                d : \topx \times \topx \to \reals 
+            \end{gather*}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{gather*}
+                d(x, y) = \begin{cases}
+                    1 \text{ if } x \not = y,\\
+                    0 \text{ otherwise.}
+                \end{cases}
+            \end{gather*}
+        \end{column}
+    \end{columns}
 
     \pause
-    This is equivalent to finding an order on the set and identifying it with
-    \naturals. It only requires the Axiom of Choice!
 
-    Pls change.
+    \begin{figure}
+        \scalebox{1}{\input{fig/sankalp/discrete.pdf_tex}}
+    \end{figure}
 
 \end{frame}
 
@@ -56,7 +75,7 @@
     %
     % construct ball and shrink
     Use this metric to define open balls \(B_i, B_j\) for any pair of points in
-    \topx, \(x_i, x_j\). \pause By shrinking these open balls, we can create
+    \(\topx, x_i, x_j\). \pause By shrinking these open balls, we can create
     non-intersecting open sets as required.
     %
     \pause
@@ -110,7 +129,7 @@
 
         % \pause
 
-        \draw[->] (1) -- node[midway, above right] {\(\checkmark\) Map to Euclidean Space} (2);
+        \draw[->] (1) -- node[midway, above right] {\(\checkmark\) Discrete Metric} (2);
         \draw[->] (2) -- node[midway, below] {\(\checkmark\) Metric-induced neighbourhoods} (3);
         \draw[->] (3) -- node[midway, above left] {\(\checkmark\) Neighbourhood exclusion} (1);
 
