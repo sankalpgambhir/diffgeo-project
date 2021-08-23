@@ -1,5 +1,127 @@
 
 \begin{frame}
-    \frametitle{Ques 0}
-    Test 1 
+    \frametitle{Problem Set 3.1 - 5 --- Karthik Dasigi}
+    \emph{Problem Statement}
+    For any metric spaces \(X\) and \(Y\), put three metrics on \(X \times Y\)
+    by analogy with the Euclidean, diamon, and square metrics on \(\reals^2\).
+    Show that: For any metrix space \(X\), the distance function \(d: X \times X
+    \to \reals\) is continuous (wrt either of the three metrics on \(X \times
+    X\)).
+\end{frame}
+
+\begin{frame}
+    \frametitle{Part 1}
+
+    do st
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Continuity of the distance function}
+
+    We need to now show that the metric on a metric space \(X\), when viewed as
+    a function from the larger space \(X\times X\) to \(\reals\) is continuous
+    wrt to the metrics defined here. \pause We begin with the case for the
+    diamond metric.
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Continuity --- Diamond Metric}
+
+    For the function \(d: X\times X \to \reals\) we need to show that, for each
+    \(\epsilon \in \reals > 0\), there exists a \(\delta\) such that 
+
+    \begin{gather}
+        \forall (x, y), (x_0, y_0) \in X\times X,\nonumber\\
+        \Delta((x, y), (x_0, y_0)) < \delta \Rightarrow |\metric{x}{y} - \metric{x_0}{y_0}| < \epsilon~.
+    \end{gather}
+
+    Note that \(\Delta((x, y), (x_0, y_0)) = \metric{x}{x_0} + \metric{y}{y_0}\)
+    in the diamond formalism.
+
+    % note that the left side of the implication is simply the distance function
+    % over X x X, and the right side is the same over R
+    
+\end{frame}
+
+\begin{frame}
+    We begin with the given bound \(\epsilon\) such that
+
+    \begin{gather}
+        |\metric{x}{y} - \metric{x_0}{y_0}| < \epsilon~, \nonumber\\
+        \metric{x}{y} - \metric{x_0}{y_0} < \epsilon~, \nonumber\\
+        \metric{x}{y} < \epsilon + \metric{x_0}{y_0}~.
+    \end{gather}
+
+    \pause
+
+    Adding \(\metric{y}{x_0}\) to both sides and using the triangle inequality,
+    we obtain
+
+    \begin{gather}
+        \metric{x}{x_0} \leq \metric{x}{y} + \metric{y}{x_0} < \epsilon + \metric{x_0}{y_0} + \metric{y}{x_0}~.
+    \end{gather}
+
+    \pause
+
+    And similarly by adding \(\metric{x}{y_0}\), and finally adding the two
+    resultant inequalities, we get
+
+    \begin{gather}
+        \metric{y}{y_0} \leq \metric{x}{y} + \metric{x}{y_0} < \epsilon + \metric{x_0}{y_0} + \metric{x}{y_0}~,\nonumber\\
+        \textcolor{red}{T = \metric{x}{x_0} + \metric{y}{y_0} < 2\epsilon + 2\metric{x_0}{y_0} + \metric{y}{x_0}+ \metric{x}{y_0}~.}        
+        \label{eqn:tresult}
+    \end{gather}
+
+    % comment on T being the required quantity now we need to resolve the 1D
+    % terms on the right side, since x and y are variable
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Peeking along a side}
+
+    To resolve the terms dependant on only \(x\) or only \(y\), let us consider
+    the dimensionally reduced problem, or proving continuity along either axis
+    inside the \(\epsilon\)-ball around the point \((x_0, y_0)\), i.e.
+
+    \begin{gather*}
+        \text{Given } \epsilon \in \reals > 0 \text{ as before, with} \\
+        |\metric{x_0}{y} - \metric{x_0}{y_0}| < \epsilon~.
+    \end{gather*}
+
+    \pause
+
+    It is easy to now see the reduction
+
+    \begin{gather}
+        \metric{x_0}{y} - \metric{x_0}{y_0} < \epsilon~, \nonumber \\
+        \metric{x_0}{y} < \epsilon + \metric{x_0}{y_0}|~.
+        \label{eqn:ybound}
+    \end{gather}
+
+    We see that this is a bound on the \(y\) dependant term that is constant
+    (freezing the reference point). Similarly we obtain a bound on the other
+    term
+
+    \begin{gather}
+        \metric{x}{y_0} < \epsilon + \metric{x_0}{y_0}|~.
+        \label{eqn:xbound}
+    \end{gather}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Collecting results}
+
+    From the results for \(T, x, \text{and } y\) in \autoref{eqn:tresult},
+    \autoref{xbound}, and \autoref{eqn:ybound}, we obtain the bound on \(T\)
+
+    \begin{equation}
+        T < 2\epsilon + 2\metric{x_0}{y_0} + \metric{y}{x_0}+ \metric{x}{y_0} < 4\epsilon + 4\metric{x_0}{y_0} = \delta(\epsilon)
+    \end{equation}
+
+    as required.
+
 \end{frame}
