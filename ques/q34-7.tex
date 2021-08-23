@@ -1,12 +1,13 @@
 
 \begin{frame}
     \frametitle{Problem Set 3.4 - 7 --- Pushkar Mohile}
-    Analysis Notes 3.4 Q.- Show that the discrete and indiscrete topologies on a
+    \emph{Problem Statement}\\
+    Show that the discrete and indiscrete topologies on a
     set give rise to functors
 
-\begin{equation}
+\begin{equation*}
     \cat{Set}\to \cat{Top}
-\end{equation}    
+\end{equation*}    
     
     and these are the left and right adjoints, respectively, to the forgetful
     functor from Top to Set. 
@@ -27,6 +28,29 @@ which respects composition
     \mathcal{F}(f\circ g) = \mathcal{F}(f) \circ \mathcal{F}(g)
 \end{equation}
     and maps \(\textsf{id} \text{ to } \textsf{id}\).
+
+    \begin{center}
+        \begin{tikzpicture}[node distance={2cm}, thick, main/.style = {draw=none}]
+            \node[main] (1)                         {\(b\)};
+            \node[main] (2) [below left of=1]       {\(a\)};
+            \node[main] (3) [below right of=1]      {\(c\)};
+
+            \node[main] (4) [right of=3]            {\(\mathcal{F}(a)\)};
+            \node[main] (5) [above right of=4]      {\(\mathcal{F}(b)\)};
+            \node[main] (6) [below right of=5]      {\(\mathcal{F}(c)\)};
+            
+            \draw[->] (2) to node[midway, above] {\(f\)} (1);
+            \draw[->] (1) to node[midway, above] {\(g\)} (3);
+            \draw[->] (2) to node[midway, below] {\(f\circ g\)} (3);
+
+            \draw[->, color=white] (1.south) to node[midway, below] {\Large\textcolor{black}{\(\mapsto\)}} (5.south) ; 
+                
+            \draw[->] (4) to node[midway, above left] {\(\mathcal{F}(f)\)} (5);
+            \draw[->] (5) to node[midway, above right] {\(\mathcal{F}(g)\)} (6);
+            \draw[->] (4) to node[midway, below] {\(\mathcal{F}(f\circ g)\)} (6);
+        \end{tikzpicture}
+    \end{center}
+
 \end{frame}
 
 \begin{frame}
