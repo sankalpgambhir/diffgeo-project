@@ -2,6 +2,7 @@
 \begin{frame}
     \frametitle{Problem Set 3.1 - 5 --- Karthik Dasigi}
     \emph{Problem Statement}
+
     For any metric spaces \(X\) and \(Y\), put three metrics on \(X \times Y\)
     by analogy with the Euclidean, diamon, and square metrics on \(\reals^2\).
     Show that: For any metrix space \(X\), the distance function \(d: X \times X
@@ -76,10 +77,10 @@
 
     \begin{gather}
         |\metric{x}{y} - \metric{x_0}{y_0}| < \epsilon~, \nonumber\\
-        \metric{x}{y} - \metric{x_0}{y_0} < \epsilon~, \nonumber\\
+        \metric{x}{y} - \metric{x_0}{y_0} < \epsilon~,  \nonumber\\
         \metric{x}{y} +\metric{x_0}{y_0}< \epsilon + 2\metric{x_0}{y_0}~.
     \end{gather}
-
+    (We will discuss the case of negative \(\epsilon\) bound later)
     \pause
 
     Adding \(2\metric{y}{x_0}\) to both sides and using the triangle inequality,
@@ -98,7 +99,7 @@
 \begin{frame}
     \frametitle{Peeking along a side}
 
-    To resolve the terms dependant on only \(y\), let us consider
+    To resolve the terms dependent on only \(y\), let us consider
     the dimensionally reduced problem, or proving continuity along the y-axis
     inside the \(\epsilon\)-ball around the point \((x_0, y_0)\), i.e.
 
@@ -131,9 +132,18 @@
 
     \begin{equation}
         T < \epsilon + 2\metric{x_0}{y_0} + 2\metric{y}{x_0} < 3\epsilon + 4\metric{x_0}{y_0} = \delta(\epsilon)
+        \label{eqn:finaltbound}
     \end{equation}
 
-    as required.
+    as required. Using the other half of the absolute value inequality,
+    \(\metric{x}{y} - \metric{x_0}{y_0} > - \epsilon\), we similarly get the
+    bound
+
+    \begin{equation*}
+        T < 5\epsilon + 4 \metric{x_0}{y_0}~.
+    \end{equation*}
+
+    So, inequality \autoref{eqn:finaltbound} still gives the tightest bound.
 
 \end{frame}
 
@@ -149,7 +159,7 @@
     \begin{equation}
         x+y \geq (x^p+y^p)^{1/p} \text{ for } p \geq 1
     \end{equation}
-    
+
     (This is can be viewed as the \textit{Minkowski} inequality applied to a 1-dimensional vector)
 
     \pause
