@@ -17,7 +17,7 @@ Solution :
 
 We begin by recalling the definition of a functor. Given two categories
 \(\textsf{C}\) and \(\textsf{D}\), a functor \(\mathcal{F} \) assigns to every
-object \(a \in \textsf{C}\) an object \(\mathcal{F}(a)\in\textsf{D}\), and for
+object \(a \text{ in } \textsf{C}\) an object \(\mathcal{F}(a)\text{ in }\textsf{D}\), and for
 every morphism \(f \in C(a,b)\) a corresponding morphism 
 \begin{equation}
 \mathcal{F}(f) \in \text{D}(\mathcal{F}(a), \mathcal{F}(b) )
@@ -42,9 +42,11 @@ in the following way
     \textit{indisc}(X) \mapsto (X,\tau_{indisc}) 
 \end{gather*}
 And for any function \(f \in \textsf{Set}(X,Y)\), \(f:X\to Y\mapsto f:(X,
-\tau_X)\to(Y,\tau_Y)\). 
+\tau_{disc})\to(Y,\tau_{disc})\) for \(disc\) \\ \(f:X\to Y\mapsto f:(X,
+\tau_{indisc})\to(Y,\tau_{indisc})\) for \(indisc\) 
 % Rewrite this later . Check Swapneel's way of writing this and write in the
 % same style. 
+\\ \pause
 The check we need to make here is that \(f\) is a continuous function between
 sets with the discrete and indiscrete topologies. 
 \end{frame}
@@ -54,19 +56,20 @@ sets with the discrete and indiscrete topologies.
  For the discrete topology, this is done by noting that 
  
  \begin{equation}
-    \forall \textnormal{ open sets } U \in \tau_Y , f^{-1} (U) \subseteq X \in 2^X
+    \forall \textnormal{ open sets } U \in \tau_Y , f^{-1} (U) \subseteq X \implies f^{-1} (U)\in 2^X
  \end{equation}
 
     and hence \(f^{-1}(U)\) is open in \(\tau_{disc}\). 
 
     % add some stuff for discrete topology
     % split indiscrete to another slide
-    
+\end{frame}
+\begin{frame}
   Similarly, for the indiscrete topology, the only open subsets of \(Y\) are
     \({\emptyset,Y}\).  \\ For \(\emptyset \in \tau_Y\) we have
     \(f^{-1}(\emptyset) = \emptyset \in \tau_X \) and \(f^{-1}(Y) = X \cup
     \emptyset \in \tau_X \)  %\note{Clarify}
-and hence once again \(f\) is continuous. The composition law is valid since
+and hence once again \(f\) is continuous. \\The composition law is valid since
 composition of continuous functions are continuous. Hence the discrete and
 indiscrete topologies define the required functors. 
 
@@ -90,7 +93,7 @@ We recall the definitions of left and right adjoint functors. Given two
 categories \(\textsf{C}\) and \(\textsf{D}\) and functors \(\mathcal{F}:
 \textsf{C} \to \textsf{D}\) and \(\mathcal{G}: \textsf{D} \to \textsf{C}\), we
 say that \(\mathcal{F}\) is a left adjoint and \(\mathcal{G}\) is a right
-adjoint if for objects \(a \in\) \textsf{C} and \(x \in\textsf{D}\) , there
+adjoint if for each object \(a \in\) \textsf{C} and \(x \in\textsf{D}\) , there
 is a bijection between the sets of morphisms 
 
 \begin{gather*}
@@ -98,7 +101,10 @@ is a bijection between the sets of morphisms
     \mathcal{G}(x))
 \end{gather*}
 
-that is \textit{natural} in \(a\) and \(x\). The naturality condition is
+that is \textit{natural} in \(a\) and \(x\). 
+\end{frame}
+\begin{frame}
+The naturality condition is
 formally stated as follows: For any morphism \(a \to a'\) in \textsf{C} and \(x
 \to x'\) in \textsf{D}, we have the following commutative diagrams (Check Cat
 Theory lec. 2 or section 4.3 of the cat theory notes ) % subtle advertisement
@@ -162,14 +168,11 @@ Next, note that
     \cat{Set}(X, Y) \subseteq \cat{Top}(\textit{disc}(X) , (Y, \tau_Y)  )
 \end{equation}
 
-\begin{proof}
-    Let \(f \in \cat{Set}(X,Y)\),  \(U_Y\) be any open set on \(\tau_Y\).
+    Let \(f \in \cat{Set}(X,Y)\),  \(U_Y\) be any open set in \(\tau_Y\).
     \(f^{-1}(U) \subseteq X \in 2^X\) and hence \(f\) is continuous. \\
-    Thus we have proved that the two sets are equal. Finally we make note of the
-    naturality condition. This holds because composition of functions and
-    composition of continuous function commute with the functors. 
+    Thus we have proved that the two sets of morphisms are equal. Finally we make note of the
+    naturality condition. 
     % explain this more clearly
-\end{proof}
 \end{frame}
 \begin{frame}
 
@@ -207,8 +210,8 @@ Next, note that
     
 This adjunction can be restated in terms of the following universal property of
 the discrete topology : The discrete topology on \(X\) is the topology such that
-every function from \(X\) to any topological space \(Y, \tau_Y\) is continuous. 
-
+every function from \(X\) to any topological space \( (Y, \tau_Y)\) is continuous. 
+%Draw diagram
 \end{frame}
 
 \begin{frame}
@@ -226,5 +229,7 @@ every function from \(X\) to any topological space \(Y, \tau_Y\) is continuous.
     topology on \(X\), \(f^{-1}(\emptyset) = \emptyset\) and \(f^{-1}(X) = Y
     \cup \emptyset\), both of which are open wrt any topology on \(Y\). Hence
     \(f\) is continuous. 
+
+    What is the universal property ? 
 
 \end{frame}
