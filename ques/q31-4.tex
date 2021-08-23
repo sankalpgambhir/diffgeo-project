@@ -117,7 +117,7 @@ that characterise metric spaces. We will look at each metric separately.
     \pause
     \item For $x,y,z \in \mathbb{R}$ we have proven the triangle inequality $|x_1 - z_1| \leq |x_1 - y_1| + |y_1 - z_1|$.  \hfill\break
     \hfill\break
-     Now, for $x,y,z \in \mathbb{R}^n$ there exists a $k$ s.t. $|x_k - z_k| \leq |x_k - y_k| + |y_k - z_k|$. \\ Let this $k$ correspond to $d_{\infty}(x,z) = max_{i\in \mathcal{I}}\{|x_i - z_i|\} = |x_k - z_k|.$ \hfill\break
+     Now, for $x,y,z \in \mathbb{R}^n$, let $k \in \mathcal{I}$ correspond to $max_{i\in \mathcal{I}}\{|x_i - z_i|\} = |x_k - z_k|.$ \hfill\break
      \hfill\break
     $ |x_k - y_k| \leq max_{i\in \mathcal{I}}\{|x_i - y_i|\} = d_{\infty}(x,y)$
      \\
@@ -125,7 +125,7 @@ that characterise metric spaces. We will look at each metric separately.
      \hfill\break
      \hfill\break
      Hence, $ max_{i\in \mathcal{I}}\{|x_i -
-    z_i|\} \leq max_{i\in \mathcal{I}}\{|x_i + y_i|\} \leq max_{i\in \mathcal{I}}\{|y_i - z_i|\}$ \Rightarrow  $d_\infty(x,z) \leq d_\infty(x,y)+d_\infty(y,z).$
+    z_i|\} \leq max_{i\in \mathcal{I}}\{|x_i - y_i|\} + max_{i\in \mathcal{I}}\{|y_i - z_i|\} \Rightarrow d_\infty(x,z) \leq d_\infty(x,y)+d_\infty(y,z).$
 \end{itemize}
 \end{frame}
 
@@ -158,8 +158,9 @@ For the case of the Euclidean metric, the inequality boils down to:
 \begin{equation*}
     \sqrt{\sum_{i=1}^{n} |x_i - z_i|^2} \leq  \sqrt{\sum_{i=1}^{n} |x_i - y_i|^2} +  \sqrt{\sum_{i=1}^{n} |y_i - z_i|^2}
 \end{equation*}
-For $n=1$, we retrieve the well-known inequality, 
-$\sqrt{|x_1 - z_1|^2} \leq  \sqrt{|x_1 - y_1|^2} +  \sqrt{|y_1 - z_1|^2}
-\Rightarrow|x_1 - z_1|\leq |x_1 - y_1|+|y_1 - z_1|$ \hfill\break \hfill\break
-For $n=2$ employ the relations between RMS and AM.
+For $n=1$, we retrieve the well-known inequality
+\begin{equation*}
+    \sqrt{|x_1 - z_1|^2} \leq  \sqrt{|x_1 - y_1|^2} +  \sqrt{|y_1 - z_1|^2}
+\Rightarrow|x_1 - z_1|\leq |x_1 - y_1|+|y_1 - z_1|
+\end{equation*} 
 \end{frame}
