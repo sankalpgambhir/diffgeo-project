@@ -40,6 +40,7 @@
             d(f(x),f(y))\leq (x,y)
             \label{eqn:wc}
         \end{equation}
+        for all \(x,y\in X\)
     \end{definition}
 
 \end{frame}
@@ -54,17 +55,105 @@
 
     From \autoref{eqn:gfresult}, we see that 
     \begin{gather*}
-        d(f(x_1),f(x_2))\leq d(x_1,x_2)\\
         d(g(f(x_1)),g(f(x_2)))=d(x_1, x_2)\leq d(f(x_1),f(x_2))\\
         \implies d(x_1,x_2)=d(f((x_1),f(x_2)))
     \end{gather*}
+    \pause
     Therefore, isomorphisms in Metric\(_{wc}\) are isometries.
 
 \end{frame}
 
 \begin{frame}
     \frametitle{Isomorphisms in Metric\(_{L}\)}
+    The category Metric\(_{L}\) is a category whose objects are metric spaces and morphisms are Lipschitz continuous maps.
+    \pause
+    \begin{definition}[Lipschitz continuity]
+        A function \(f : X \rightarrow Y\) between metric spaces is
+        Lipschitz continuous if there exists a \(K > 0\) such that
+        \begin{equation}
+            d(f(x),f(y))\leq Kd(x,y)
+            \label{eqn:L}
+        \end{equation}
+        for all \(x,y\in X\)
+    \end{definition}    
 
-    
+\end{frame}
+
+\begin{frame}
+    Suppose \(f:X\rightarrow Y\) is an isomorphism between \(X,Y\in \text{Metric}_{L}\), and \(g\) is it's inverse. 
+    For \(x_1,x_2\in X\), the isomorphisms \(f\) and \(g\) must satisfy (from \autoref{eqn:L})
+    \begin{gather}
+        d(f(x_1),f(x_2))\leq Kd(x_1,x_2)\\
+        d(g(f(x_1)),g(f(x_2)))\leq K'd(f(x_1),f(x_2))\\
+        \text{Again, by using \autoref{eqn:L} we get}\\
+        d(f(x_1),f(x_2))\leq Kd(x_1,x_2)\\
+        d(x_1,x_2)\leq K'd(f(x_1),f(x_2))\\
+        \implies KK' \geq 1
+    \end{gather}
+    \pause
+    This means that for any isomorphisms in Metric\(_{L}\), the coefficients \(K,K'\neq 1\). 
+    Thus, not all isomorphisms in Metric\(_L\) are isometries.
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Detour to Problem Set 3.1 - 8}
+    In question 8 of the problem set we are asked to prove the following inclusion functors exist:
+    \begin{equation*}
+        \text{Metric}_{wc} \rightarrow \text{Metric}_L \rightarrow \text{Metric}_u \rightarrow \text{Metric}
+    \end{equation*}
+    and that the inclusions are not proper.\\
+
+    Proofs:
+    \begin{itemize}
+        \item Proof that weak contractions are Lipschitz continuous:\\
+            if \(f:X\rightarrow Y\) is a weak contraction then, 
+            \begin{equation*}
+                d(f(x_1),f(x_2))\leq d(x_1,x_2)
+            \end{equation*}
+            thus, \(f:X\rightarrow Y\) is Lipschitz continuous with \(K=1\)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item Proof that Lipschitz continuous functions are uniformly continuous:\\
+            if \(f:X\rightarrow Y\) is Lipschitz continuous then,
+            \begin{equation*}
+                d(f(x_1),f(x_2))\leq Kd(x_1,x_2)\text{ for some }K\geq 0
+            \end{equation*}
+            if we take \(\delta = \epsilon/K\), for some \(\epsilon>0\), then , 
+            \begin{equation*}
+                d(x_1,d_2)<\delta \implies d(f(x_1),f(x_2))<\epsilon
+            \end{equation*}
+            thus, \(f:X\rightarrow Y \) is uniformly continuous
+        \item Proof that uniform continuous functions are continuous:\\
+            if \(f:X\rightarrow Y\) is uniformly continuous then, if given \(\epsilon > 0\), there exists \(\delta>0\) such that:
+            \begin{equation*}
+                d(x,y)<\delta \implies d(f(x),f(y))<\epsilon
+            \end{equation*}
+            Clearly, a uniform continuous function is continuous.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    Examples where the inclusions are not proper:
+    \begin{itemize}
+        \item The function \(f(x)=2x\) on \(\reals\) is Lipschitz continuous but not a weak contraction
+        \item The function \(f(x)=\sqrt{x}\) on [\(0,\infty\)] is uniformly continuous but not Lipschitz continuous
+        \item The function \(f(x)=1/x\) on [\(0,1\)] is continuous but not uniformly continuous
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Wrapping it up}
+    Now that we have shown that we have functors:
+    \begin{equation*}
+        \text{Metric}_{wc} \rightarrow \text{Metric}_L \rightarrow \text{Metric}_u \rightarrow \text{Metric}
+    \end{equation*}
+    From this we can say that since not all isomorphisms in Metric\(_{L}\) aren't isometries, 
+    \pause
+    it means that not all isomorphisms in Metric\(_u\) and Metric are isometries.\\
+    Thus only for the category Metric\(_wc\), bijective isometry gives the notion of isomorphism.
 
 \end{frame}
