@@ -10,8 +10,11 @@
 \usepackage{bm}
 \usepackage{amssymb}
 \usepackage{mathtools}
+\usepackage{verbatim}
 
 % drawing stuffs
+\usepackage{pstricks}
+% \usepackage{auto-pst-pdf}
 \usepackage{tikz, tkz-orm, pgfplots}
 \usetikzlibrary{arrows,shapes,automata,backgrounds,petri,decorations.markings}
 \usetikzlibrary{matrix,positioning,decorations.pathreplacing,calc,tikzmark}
@@ -35,3 +38,12 @@
 \ifthenelse{\value{notes} > 0}{
     \renewcommand{\notes}[1]{{\tiny #1}}
 }{}
+
+% actual macros
+\newcommand{\reals}{\ensuremath{\mathbb{R}}}
+\newcommand{\naturals}{\ensuremath{\mathbb{N}}}
+\newcommand{\topx}{\ensuremath{X}}
+\newcommand{\catTop}{\textsf{Top}}
+\newcommand{\Lagr}{\mathcal{L}} \newcommand{\olsi}[1]{\,\overline{\!{#1}}}
+\newcommand{\cat}[1]{\,\textsf{#1}} \newcommand{\bijec}{ \xrightarrow{\cong}}
+\renewcommand{\vec}[1]{\ensuremath{\mathbf{#1}}}
