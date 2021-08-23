@@ -3,7 +3,7 @@
     \frametitle{Question (4)}
     \textbf{Ques - Show that: The underlying topology of the discrete metric is the discrete topology. If a set X has more than one element, then the indiscrete topology on X is not metrizable.}\\\\
     Both these subparts deal with one or the other extreme cases as far as topologies go. So let's look at them individually before solving the problem.\\\\
-    \textbf{Discrete Topology:} The textbook definition of a \textit{discrete topology} is that it is a collection of all subsets of $X$, i.e, $\tau = 2^{X}$. There are a few interesting inferences to be drawn from this definition. Since every possible subset is an open subset in the discrete topology, in particular, every \textit{singleton subset} is an open set in this topology.
+    \textbf{Discrete Topology:} The textbook definition of the \textit{discrete topology} is that it is a collection of all subsets of $X$, i.e, $\tau = 2^{X}$. There are a few interesting inferences to be drawn from this definition. Since every possible subset is an open subset in the discrete topology, in particular, every \textit{singleton subset} is an open set in this topology.
 \end{frame}
 
 \begin{frame}
@@ -23,8 +23,8 @@
 
 \begin{frame}
     \frametitle{Question (4)}
-    Now, a metric $d$ on a set $X$ induces a topology $\tau$ by taking the idea of the open balls $B(x,r) = \{y : d(x,y) < r\}$ as basic open sets. We need to show that the $d_{\text{discrete}}$ we are given produces the discrete topology $\tau = 2^{X}$.\\\\
-    Let $x \in X$ be an arbitrary element, and let $r \in (0, 1)$; then by the definition of the discrete metric $B_d(x,r) = \{x\}$, so $\forall x \in X, \{x\}$ is an open set.\\\\
+    Now, a metric $d$ on a set $X$ induces a topology $\tau$ by taking the idea of the open balls $B(x,r) = \{y : d(x,y) < r\}$ as the bases of open sets. We need to show that the $d_{\text{discrete}}$ we are given produces the discrete topology $\tau = 2^{X}$.\\\\
+    Let $x \in X$ be an arbitrary element, and let $r \in (0, 1]$; then by the definition of the discrete metric $B_d(x,r) = \{x\}$, so $\forall x \in X, \{x\}$ is an open set.\\\\
     Now, by the axioms we discussed about topological spaces, any arbitrary union of open sets is open. Let $A \subseteq X$ be any arbitrary subset of $X$, then $A = \bigcup_{x \in A} \{x\}$, but we have shown that $\forall x \in X, \{x\}$ is an open set.
 \end{frame}
 
