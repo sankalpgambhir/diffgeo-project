@@ -67,7 +67,7 @@ in the following way
 \end{gather*}
 And for any function \(f \in \textsf{Set}(X,Y)\), \(f:X\to Y\mapsto f:(X,
 \tau_{disc})\to(Y,\tau_{disc})\) for \(disc\) \\ \(f:X\to Y\mapsto f:(X,
-\tau_{indisc})\to(Y,\tau_{indisc})\) for \(indisc\) 
+\tau_{indisc})\to(Y,\tau_{indisc})\) for \(indisc\) .
 % Rewrite this later . Check Swapneel's way of writing this and write in the
 % same style. 
 \\ \pause
@@ -112,6 +112,16 @@ i.e. we are forgetting the underlying topology and viewing the function \(f\) as
 morphism between sets. 
 \end{frame}
 \begin{frame}
+
+    \begin{center}
+        \begin{tikzpicture}[node distance={1.5cm}, thick, main/.style = {draw=none}]
+            \node[main] (1)                         {C};
+            \node[main] (2) [right of=1]            {D};
+            
+            \draw[->] (1) [bend right=-30] to node[midway, above] {\(\mathcal{F}\)} (2);
+            \draw[->] (2) [bend left=30] to node[midway, below] {\(\mathcal{G}\)} (1);
+        \end{tikzpicture}
+    \end{center}
     
 We recall the definitions of left and right adjoint functors. Given two
 categories \(\textsf{C}\) and \(\textsf{D}\) and functors \(\mathcal{F}:
@@ -171,6 +181,16 @@ Theory lec. 2 or section 4.3 of the cat theory notes ) % subtle advertisement
 \end{frame}
 
 \begin{frame}
+
+    \begin{center}
+        \begin{tikzpicture}[node distance={1.5cm}, thick, main/.style = {draw=none}]
+            \node[main] (1)                         {Set};
+            \node[main] (2) [right of=1]            {Top};
+            
+            \draw[->] (1) [bend right=-30] to node[midway, above] {\(disc\)} (2);
+            \draw[->] (2) [bend left=30] to node[midway, below] {\(frg\)} (1);
+        \end{tikzpicture}
+    \end{center}
     
 We now check the adjuction between \(frg\) and \(disc\) as  defined previously.
 Let \(X \) be any set and \((Y,\tau_Y)\) be any topological space. We have to
@@ -178,6 +198,9 @@ prove that
 \begin{equation}
     \cat{Top}(\textit{disc}(X) , (Y, \tau_Y)  ) \bijec \cat{Set}(X, Y)
 \end{equation}
+
+\pause
+
 This bijection is given by  \(f \mapsto f \) in both directions. We now have to
 simply check whether the two sets are the same. This is done as follows: 
 \begin{equation}
@@ -214,7 +237,7 @@ Next, note that
             \draw[->] (3) to node [midway, below] {id} (4);
             \draw[->] (4) to node [midway, right] {\((-)\circ h\)} (2);
         \end{tikzpicture}
-        \\ \phantom{1}\\
+        \\ \phantom{1}\\ \pause
         \begin{tikzpicture}[node distance={5cm}, thick, main/.style = {draw=none}]
             \node[main] (1)                 {\(\textsf{Top}(disc(X), (Y,\tau_Y))\)};
             \node[main] (2) [right of=1]    {\(\textsf{Set}(X, Y)\)};
@@ -236,24 +259,56 @@ This adjunction can be restated in terms of the following universal property of
 the discrete topology : The discrete topology on \(X\) is the topology such that
 every function from \(X\) to any topological space \( (Y, \tau_Y)\) is continuous. 
 %Draw diagram
+
+
+\begin{center}
+    \begin{tikzpicture}[node distance={3cm}, thick, main/.style = {draw=none}]
+        \node[main] (1)                         {\(X\)};
+        \node[main] (2) [above left of=1]            {\((X, \tau_{disc})\)};
+        \node[main] (3) [above right of=1]            {\((Y, \tau_Y)\)};
+        
+        \draw[->] (1) to (2);
+        \draw[->] (1) to node[midway, below] {\(f\)} (3);
+        \draw[->] (2) to node[midway, above] {\(f\)} (3) [dashed];
+    \end{tikzpicture}
+\end{center}
+
+
 \end{frame}
 
 \begin{frame}
+
+    \begin{center}
+        \begin{tikzpicture}[node distance={1.5cm}, thick, main/.style = {draw=none}]
+            \node[main] (1)                         {Set};
+            \node[main] (2) [left of=1]            {Top};
+            
+            \draw[->] (1) [bend right=-30] to node[midway, below] {\(disc\)} (2);
+            \draw[->] (2) [bend left=30] to node[midway, above] {\(frg\)} (1);
+        \end{tikzpicture}
+    \end{center}
+
     Finally we take a look at the right adjoint condition for the indiscrete
-    topology. The conditions states that 
+    topology. The condition states that 
     \begin{equation}
          \cat{Set}(Y,X ) \bijec \cat{Top}((Y, \tau_Y) ,\textit{indisc}(X))
     \end{equation}
-    The checks are similar to the previously done checks.  We mention the only
-    nontrivial check: 
+    The checks are similar to the previously done checks.
+
+\end{frame}
+
+\begin{frame}
+
+    We mention the only nontrivial check: 
     \begin{equation}
         \cat{Set}(Y,X ) \subseteq\cat{Top}((Y, \tau_Y) ,\textit{indisc}(X))
     \end{equation}
+
     For a given function \(f \in   \cat{Set}(Y,X )\), with the indiscrete
     topology on \(X\), \(f^{-1}(\emptyset) = \emptyset\) and \(f^{-1}(X) = Y
     \cup \emptyset\), both of which are open wrt any topology on \(Y\). Hence
     \(f\) is continuous. 
 
-    What is the universal property ? 
+    What is the universal property? 
 
 \end{frame}
