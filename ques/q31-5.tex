@@ -57,28 +57,32 @@
     \begin{gather}
         |\metric{x}{y} - \metric{x_0}{y_0}| < \epsilon~, \nonumber\\
         \metric{x}{y} - \metric{x_0}{y_0} < \epsilon~, \nonumber\\
-        \metric{x}{y} < \epsilon + \metric{x_0}{y_0}~.
+        \metric{x}{y} +\metric{x_0}{y_0}< \epsilon + 2\metric{x_0}{y_0}~.
     \end{gather}
 
     \pause
 
-    Adding \(\metric{y}{x_0}\) to both sides and using the triangle inequality,
+    Adding \(2\metric{y}{x_0}\) to both sides and using the triangle inequality,
     we obtain
 
-    \begin{gather}
-        \metric{x}{x_0} \leq \metric{x}{y} + \metric{y}{x_0} < \epsilon + \metric{x_0}{y_0} + \metric{y}{x_0}~.
-    \end{gather}
+    \begin{tcolorbox}[colframe=red, colback=red!10!white]
+        \begin{align}
+            T = \metric{x}{x_0} + \metric{y}{y_0} &\leq (\metric{x}{y} + \metric{y}{x_0}) + (\metric{y}{x_0}+\metric{x_0}{y_0}) \nonumber\\ 
+            &< \epsilon + 2\metric{x_0}{y_0} + 2\metric{y}{x_0}~.
+            \label{eqn:tresult}
+        \end{align}
+    \end{tcolorbox}
 
-    \pause
+    % \pause
+    %
+    % And similarly by adding \(\metric{x}{y_0}\), and finally adding the two
+    % resultant inequalities, we get
 
-    And similarly by adding \(\metric{x}{y_0}\), and finally adding the two
-    resultant inequalities, we get
-
-    \begin{gather}
-        \metric{y}{y_0} \leq \metric{x}{y} + \metric{x}{y_0} < \epsilon + \metric{x_0}{y_0} + \metric{x}{y_0}~,\nonumber\\
-        \textcolor{red}{T = \metric{x}{x_0} + \metric{y}{y_0} < 2\epsilon + 2\metric{x_0}{y_0} + \metric{y}{x_0}+ \metric{x}{y_0}~.}        
-        \label{eqn:tresult}
-    \end{gather}
+    % \begin{gather}
+    %     \metric{y}{y_0} \leq \metric{x}{y} + \metric{x}{y_0} < \epsilon + \metric{x_0}{y_0} + \metric{x}{y_0}~,\nonumber\\
+    %     \textcolor{red}{T = \metric{x}{x_0} + \metric{y}{y_0} < 2\epsilon + 2\metric{x_0}{y_0} + \metric{y}{x_0}+ \metric{x}{y_0}~.}        
+    %     \label{eqn:tresult}
+    % \end{gather}
 
     % comment on T being the required quantity now we need to resolve the 1D
     % terms on the right side, since x and y are variable
@@ -88,8 +92,8 @@
 \begin{frame}
     \frametitle{Peeking along a side}
 
-    To resolve the terms dependant on only \(x\) or only \(y\), let us consider
-    the dimensionally reduced problem, or proving continuity along either axis
+    To resolve the terms dependant on only \(y\), let us consider
+    the dimensionally reduced problem, or proving continuity along the y-axis
     inside the \(\epsilon\)-ball around the point \((x_0, y_0)\), i.e.
 
     \begin{gather*}
@@ -103,31 +107,27 @@
 
     \begin{gather}
         \metric{x_0}{y} - \metric{x_0}{y_0} < \epsilon~, \nonumber \\
-        \metric{x_0}{y} < \epsilon + \metric{x_0}{y_0}|~.
+        \metric{x_0}{y} < \epsilon + \metric{x_0}{y_0}~.
         \label{eqn:ybound}
     \end{gather}
 
     We see that this is a bound on the \(y\) dependant term that is constant
-    (freezing the reference point). Similarly we obtain a bound on the other
-    term
-
-    \begin{gather}
-        \metric{x}{y_0} < \epsilon + \metric{x_0}{y_0}|~.
-        \label{eqn:xbound}
-    \end{gather}
+    (freezing the reference point).
 
 \end{frame}
 
 \begin{frame}
     \frametitle{Collecting results}
 
-    From the results for \(T, x, \text{and } y\) in \autoref{eqn:tresult},
-    \autoref{xbound}, and \autoref{eqn:ybound}, we obtain the bound on \(T\)
+    From the results for \(T \text{ and } y\) in \autoref{eqn:tresult} and
+    \autoref{eqn:ybound}, we obtain the bound on \(T\)
 
     \begin{equation}
-        T < 2\epsilon + 2\metric{x_0}{y_0} + \metric{y}{x_0}+ \metric{x}{y_0} < 4\epsilon + 4\metric{x_0}{y_0} = \delta(\epsilon)
+        T < \epsilon + 2\metric{x_0}{y_0} + 2\metric{y}{x_0} < 3\epsilon + 4\metric{x_0}{y_0} = \delta(\epsilon)
     \end{equation}
 
     as required.
 
 \end{frame}
+
+% write about the proof for other metrics as well
