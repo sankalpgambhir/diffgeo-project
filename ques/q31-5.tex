@@ -12,7 +12,13 @@
 \begin{frame}
     \frametitle{Part 1}
 
-    do st
+    Suppose \(d_x()\) is the distance function on \(X\), and \(d_y()\) is the distance function on \(Y\).
+    Analogous to the three metrics on \(\reals^2\), we can create three metrics on \(X\times Y\) that describe the distance between the points \((x_1, y_1)\) and \((x_2, y_2)\):
+    \begin{itemize}
+        \item Euclidean\(_{X\times Y}\): \(\sqrt{d_x(x_1, x_2)^2 + d_y(y_1, y_2)^2}\)
+        \item Square\(_{X\times Y}\): \textbf{max}{\(d_x(x_1, x_2) , d_y(y_1, y_2)\)}
+        \item Diamond\(_{X\times Y}\): \(d_x(x_1, x_2) + d_y(y_1, y_2)\)
+    \end{itemize}
 
 \end{frame}
 
