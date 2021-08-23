@@ -10,13 +10,14 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Part 1}
+    \frametitle{Metric analogues}
 
-    Suppose \(d_x()\) is the distance function on \(X\), and \(d_y()\) is the distance function on \(Y\).
-    Analogous to the three metrics on \(\reals^2\), we can create three metrics on \(X\times Y\) that describe the distance between the points \((x_1, y_1)\) and \((x_2, y_2)\):
+    Suppose \(d_x\) is the distance function on \(X\), and \(d_y\) is the distance function on \(Y\).
+    Analogous to the three metrics on \(\reals^2\), we can create three metrics on \(X\times Y\) that
+    describe the distance between the points \((x_1, y_1)\) and \((x_2, y_2)\):
     \begin{itemize}
         \item Euclidean\(_{X\times Y}\): \(\sqrt{d_x(x_1, x_2)^2 + d_y(y_1, y_2)^2}\)
-        \item Square\(_{X\times Y}\): \textbf{max}{\(d_x(x_1, x_2) , d_y(y_1, y_2)\)}
+        \item Square\(_{X\times Y}\): \textbf{max}(\(d_x(x_1, x_2) , d_y(y_1, y_2)\))
         \item Diamond\(_{X\times Y}\): \(d_x(x_1, x_2) + d_y(y_1, y_2)\)
     \end{itemize}
 
@@ -27,24 +28,43 @@
 
     We need to now show that the metric on a metric space \(X\), when viewed as
     a function from the larger space \(X\times X\) to \(\reals\) is continuous
-    wrt to the metrics defined here. \pause We begin with the case for the
-    diamond metric.
+    wrt to the metrics defined here. 
 
 \end{frame}
 
 \begin{frame}
-    \frametitle{Continuity --- Diamond Metric}
 
-    For the function \(d: X\times X \to \reals\) we need to show that, for each
-    \(\epsilon \in \reals > 0\), there exists a \(\delta\) such that 
+    \frametitle{Continuity}
+
+    \begin{definition}[Continuity]
+        Suppose \(X\) and \(Y\) are metric spaces. A function \(f : X \rightarrow Y\)
+        is continuous if for any point \(x_0 \in X\), given \(\epsilon > 0\),
+        there exists \(\delta > 0\) such that
+        \begin{equation}
+            d(x,x_0)<\delta \text{ implies } d(f(x), f(x_0))<\epsilon 
+        \end{equation}
+
+    \end{definition}
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{Continuity --- Diamond metric}
+
+    We begin with the case for the
+    diamond metric.
+
+    \pause
+
+    For the function \(d: X\times X \to \reals\) we need to show that, for some point \((x_0, y_0)\ \in X \),
+    given an \(\epsilon > 0\), there exists a \(\delta\) such that 
 
     \begin{gather}
-        \forall (x, y), (x_0, y_0) \in X\times X,\nonumber\\
         \Delta((x, y), (x_0, y_0)) < \delta \Rightarrow |\metric{x}{y} - \metric{x_0}{y_0}| < \epsilon~.
     \end{gather}
 
-    Note that \(\Delta((x, y), (x_0, y_0)) = \metric{x}{x_0} + \metric{y}{y_0}\)
-    in the diamond formalism.
+    Note that the diamond metric \(\Delta((x, y), (x_0, y_0)) = \metric{x}{x_0} + \metric{y}{y_0}\)
+    and the function \(d\) is the metric on \(X\).
 
     % note that the left side of the implication is simply the distance function
     % over X x X, and the right side is the same over R
@@ -73,20 +93,6 @@
         \end{align}
     \end{tcolorbox}
 
-    % \pause
-    %
-    % And similarly by adding \(\metric{x}{y_0}\), and finally adding the two
-    % resultant inequalities, we get
-
-    % \begin{gather}
-    %     \metric{y}{y_0} \leq \metric{x}{y} + \metric{x}{y_0} < \epsilon + \metric{x_0}{y_0} + \metric{x}{y_0}~,\nonumber\\
-    %     \textcolor{red}{T = \metric{x}{x_0} + \metric{y}{y_0} < 2\epsilon + 2\metric{x_0}{y_0} + \metric{y}{x_0}+ \metric{x}{y_0}~.}        
-    %     \label{eqn:tresult}
-    % \end{gather}
-
-    % comment on T being the required quantity now we need to resolve the 1D
-    % terms on the right side, since x and y are variable
-
 \end{frame}
 
 \begin{frame}
@@ -98,7 +104,8 @@
 
     \begin{gather*}
         \text{Given } \epsilon \in \reals > 0 \text{ as before, with} \\
-        |\metric{x_0}{y} - \metric{x_0}{y_0}| < \epsilon~.
+        |\metric{x_0}{y} - \metric{x_0}{y_0}| <
+        \epsilon~.
     \end{gather*}
 
     \pause
@@ -112,7 +119,7 @@
     \end{gather}
 
     We see that this is a bound on the \(y\) dependant term that is constant
-    (freezing the reference point).
+    for a given (\(x_0, y_0\)).
 
 \end{frame}
 
@@ -128,6 +135,32 @@
 
     as required.
 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Continuity for other metrics}
+
+    To prove the continuity of the Euclidean and Square metric, we can expand on the proof covered in the previous slides.
+
+    \pause
+    To expand the proof, we make use of the following property:
+    for positive \(x\) and \(y\),
+     
+    \begin{equation}
+        x+y \geq (x^p+y^p)^{1/p} \text{ for } p \geq 1
+    \end{equation}
+    
+    (This is can be viewed as the \textit{Minkowski} inequality applied to a 1-dimensional vector)
+
+    \pause
+
+    This means that the same \(\delta(\epsilon)\) can be used for the proof of continuity of the other two metrics.
+    \begin{equation}
+        (\metric{x}{x_0}^p + \metric{y}{y_0}^p)^{1/p} \leq \metric{x}{x_0} + \metric{y}{y_0} < 3\epsilon + 4\metric{x_0}{y_0} = \delta(\epsilon)
+    \end{equation}
+
+    Putting \(p = 2\) proves continuity for the Euclidean metric, and \(p=\infty\) proves continuity for the Square metric
+    
 \end{frame}
 
 % write about the proof for other metrics as well

@@ -1,5 +1,54 @@
 
 \begin{frame}
-    \frametitle{Ques 0}
-    Test 1 
+    \frametitle{Problem Set 3.1 - 9 --- Karthik Dasigi}
+    \emph{Problem Statement}
+    A function \(X\rightarrow Y\) between metric spaces is an \textit{isometry} if 
+    it preserves distances, that is, \(d(f(x),f(y))=d(x,y)\) for all \(x,y \in X\).
+    For instance, the map
+    \begin{equation}
+        \reals^2 \rightarrow \reals , \text{    } t \mapsto (\frac{3}{5}t+1, \frac{4}{5}t -5)
+    \end{equation}
+    is an isometry, with the image being the line \(4x =3y + 19\). 
+    In which of the metric categories is bijective isometry the notion of isomorphism.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Isomorphisms}
+    \begin{definition}[Isomorphism]
+        We say a morphism \(f : a \rightarrow b\) is an isomorphism in \(C\) if there exists a morphism
+        \(g : b \rightarrow a\) such that \(f \circ g = id_b\) and \(g \circ f = id_a\). The morphism \(g\) is called the inverse
+        of \(f\). The objects \(a\) and \(b\) are said to be isomorphic if there exists an isomorphism \(f:a\rightarrow b\).
+    \end{definition}
+    \pause
+    For two isomorphic metric spaces \(X\) and \(Y\), if \(f:a\rightarrow b\) is an isomorphism and \(g\) its inverse,
+    then for any \(x\in X\) and \(y\in Y\),
+    \begin{gather}
+        g(f(x))=id_x(x)=x 
+    \end{gather}
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{Isomorphisms in \(\text{Metric}_{wc}\)}
+    The category \(\text{Metric}_{wc}\) is a category whose objects are metric spaces and morphisms are weak contractions.
+    \pause
+    \begin{definition}[Weak contraction]
+        A function \(f : X \rightarrow Y\) between metric spaces is a
+        weak contraction if
+        \begin{equation}
+            d(f(x),f(y))\leq (x,y)
+        \end{equation}
+    \end{definition}
+
+\end{frame}
+
+\begin{frame}
+    Suppose \(f:X\rightarrow Y\) is an isomorphism between \(X,Y\in \text{Metric}_{wc}\), and \(g\) be its inverse. Then \(f\) and \(g\) must satisfy:
+    \begin{gather}
+        d(f())
+    \end{gather}
+
+
+    
+
 \end{frame}
