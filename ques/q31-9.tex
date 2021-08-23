@@ -7,7 +7,7 @@
     it preserves distances, that is, \(d(f(x),f(y))=d(x,y)\) for all \(x,y \in X\).
     For instance, the map
     \begin{equation}
-        \reals^2 \rightarrow \reals , \text{    } t \mapsto (\frac{3}{5}t+1, \frac{4}{5}t -5)
+        \reals \rightarrow \reals^2 , \text{    } t \mapsto (\frac{3}{5}t+1, \frac{4}{5}t -5)
     \end{equation}
     is an isometry, with the image being the line \(4x =3y + 19\). 
     In which of the metric categories is bijective isometry the notion of isomorphism.
@@ -38,7 +38,7 @@
         A function \(f : X \rightarrow Y\) between metric spaces is a
         weak contraction if
         \begin{equation}
-            d(f(x),f(y))\leq (x,y)
+            d(f(x),f(y))\leq d(x,y)
             \label{eqn:wc}
         \end{equation}
         for all \(x,y\in X\)
@@ -48,19 +48,22 @@
 
 \begin{frame}
     Suppose \(f:X\rightarrow Y\) is an isomorphism between \(X,Y\in \text{Metric}_{wc}\), and \(g\) is it's inverse. 
-    For \(x_1,x_2\in X\), the isomorphisms \(f\) and \(g\) must satisfy (from \autoref{eqn:wc})
-    \begin{gather}
+    For \(x_1,x_2\in X\), the isomorphisms \(f\) and \(g\) must satisfy the weak contraction property \autoref{eqn:wc}.
+    \begin{gather*}
         d(f(x_1),f(x_2))\leq d(x_1,x_2)\\
         d(g(f(x_1)),g(f(x_2)))\leq d(f(x_1),f(x_2))
-    \end{gather}
+    \end{gather*}
 
-    From \autoref{eqn:gfresult}, we see that 
+    Because \(f\) and \(g\) are inverses (\autoref{eqn:gfresult}), we get: 
     \begin{gather*}
         d(g(f(x_1)),g(f(x_2)))=d(x_1, x_2)\leq d(f(x_1),f(x_2))\\
-        \implies d(x_1,x_2)=d(f((x_1),f(x_2)))
+    \end{gather*}
+    Using both the inequalities, we get:
+    \begin{gather*}
+         d(x_1,x_2)=d(f((x_1),f(x_2)))
     \end{gather*}
     \pause
-    Therefore, isomorphisms in Metric\(_{wc}\) are isometries.
+    Therefore, isomorphisms in Metric\(_{wc}\) are bijective isometries.
 
 \end{frame}
 
@@ -83,16 +86,17 @@
 \begin{frame}
     Suppose \(f:X\rightarrow Y\) is an isomorphism between \(X,Y\in \text{Metric}_{L}\), and \(g\) is it's inverse. 
     For \(x_1,x_2\in X\), the isomorphisms \(f\) and \(g\) must satisfy (from \autoref{eqn:L})
-    \begin{gather}
+    \begin{gather*}
         d(f(x_1),f(x_2))\leq Kd(x_1,x_2)\\
-        d(g(f(x_1)),g(f(x_2)))\leq K'd(f(x_1),f(x_2))\\
-        \text{Again, by using \autoref{eqn:L} we get}\\
-        d(f(x_1),f(x_2))\leq Kd(x_1,x_2)\\
+        d(g(f(x_1)),g(f(x_2)))\leq K'd(f(x_1),f(x_2))
+    \end{gather*}
+    Again, by using \autoref{eqn:gfresult} we get
+    \begin{gather*}
         d(x_1,x_2)\leq K'd(f(x_1),f(x_2))\\
         \implies KK' \geq 1
-    \end{gather}
+    \end{gather*}
     \pause
-    This means that for any isomorphisms in Metric\(_{L}\), the coefficients \(K,K'\neq 1\). 
+    This means that for some isomorphisms in Metric\(_{L}\), the coefficients \(K,K'\neq 1\). 
     Thus, not all isomorphisms in Metric\(_L\) are isometries.
 
 \end{frame}
@@ -105,6 +109,7 @@
     \end{equation*}
     and that the inclusions are not proper.\\
 
+    \pause
     Proofs:
     \begin{itemize}
         \item Proof that weak contractions are Lipschitz continuous:\\
@@ -125,9 +130,10 @@
             \end{equation*}
             if we take \(\delta = \epsilon/K\), for some \(\epsilon>0\), then , 
             \begin{equation*}
-                d(x_1,d_2)<\delta \implies d(f(x_1),f(x_2))<\epsilon
+                d(x_1,x_2)<\delta \implies d(f(x_1),f(x_2))<\epsilon
             \end{equation*}
             thus, \(f:X\rightarrow Y \) is uniformly continuous
+        \pause
         \item Proof that uniform continuous functions are continuous:\\
             if \(f:X\rightarrow Y\) is uniformly continuous then, if given \(\epsilon > 0\), there exists \(\delta>0\) such that:
             \begin{equation*}
@@ -152,9 +158,9 @@
     \begin{equation*}
         \text{Metric}_{wc} \rightarrow \text{Metric}_L \rightarrow \text{Metric}_u \rightarrow \text{Metric}
     \end{equation*}
-    From this we can say that since not all isomorphisms in Metric\(_{L}\) aren't isometries, 
     \pause
-    it means that not all isomorphisms in Metric\(_u\) and Metric are isometries.\\
+    From this we can say that since not all isomorphisms in Metric\(_{L}\) are isometries, 
+    not all isomorphisms in Metric\(_u\) and Metric are isometries.\\
     Thus only for the category Metric\(_{wc}\), bijective isometry gives the notion of isomorphism.
 
 \end{frame}
