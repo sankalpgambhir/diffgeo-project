@@ -21,33 +21,49 @@
     \end{definition}
     \pause
     For two isomorphic metric spaces \(X\) and \(Y\), if \(f:a\rightarrow b\) is an isomorphism and \(g\) its inverse,
-    then for any \(x\in X\) and \(y\in Y\),
-    \begin{gather}
+    then for any \(x\in X\)
+    \begin{equation}
         g(f(x))=id_x(x)=x 
-    \end{gather}
+        \label{eqn:gfresult}
+    \end{equation}
     
 \end{frame}
 
 \begin{frame}
-    \frametitle{Isomorphisms in \(\text{Metric}_{wc}\)}
-    The category \(\text{Metric}_{wc}\) is a category whose objects are metric spaces and morphisms are weak contractions.
+    \frametitle{Isomorphisms in Metric\(_{wc}\)}
+    The category Metric\(_{wc}\) is a category whose objects are metric spaces and morphisms are weak contractions.
     \pause
     \begin{definition}[Weak contraction]
         A function \(f : X \rightarrow Y\) between metric spaces is a
         weak contraction if
         \begin{equation}
             d(f(x),f(y))\leq (x,y)
+            \label{eqn:wc}
         \end{equation}
     \end{definition}
 
 \end{frame}
 
 \begin{frame}
-    Suppose \(f:X\rightarrow Y\) is an isomorphism between \(X,Y\in \text{Metric}_{wc}\), and \(g\) be its inverse. Then \(f\) and \(g\) must satisfy:
+    Suppose \(f:X\rightarrow Y\) is an isomorphism between \(X,Y\in \text{Metric}_{wc}\), and \(g\) is it's inverse. 
+    For \(x_1,x_2\in X\), the isomorphisms \(f\) and \(g\) must satisfy (from \autoref{eqn:wc})
     \begin{gather}
-        d(f())
+        d(f(x_1),f(x_2))\leq d(x_1,x_2)\\
+        d(g(f(x_1)),g(f(x_2)))\leq d(f(x_1),f(x_2))
     \end{gather}
 
+    From \autoref{eqn:gfresult}, we see that 
+    \begin{gather*}
+        d(f(x_1),f(x_2))\leq d(x_1,x_2)\\
+        d(g(f(x_1)),g(f(x_2)))=d(x_1, x_2)\leq d(f(x_1),f(x_2))\\
+        \implies d(x_1,x_2)=d(f((x_1),f(x_2)))
+    \end{gather*}
+    Therefore, isomorphisms in Metric\(_{wc}\) are isometries.
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Isomorphisms in Metric\(_{L}\)}
 
     
 
