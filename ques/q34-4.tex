@@ -1,13 +1,12 @@
 
 \begin{frame}
-    \frametitle{Question (4)}
+    \frametitle{Problem Set 3.4 - 4}
     \textbf{Ques - Show that: The underlying topology of the discrete metric is the discrete topology. If a set X has more than one element, then the indiscrete topology on X is not metrizable.}\\\\
     Both these subparts deal with one or the other extreme cases as far as topologies go. So let's look at them individually before solving the problem.\\\\
     \textbf{Discrete Topology:} The textbook definition of the \textit{discrete topology} is that it is a collection of all subsets of $X$, i.e, $\tau = 2^{X}$. There are a few interesting inferences to be drawn from this definition. Since every possible subset is an open subset in the discrete topology, in particular, every \textit{singleton subset} is an open set in this topology.
 \end{frame}
 
 \begin{frame}
-    \frametitle{Question (4)}
     \textbf{Indiscrete Topology:} The collection $\tau = \{ \emptyset , X \}$ on $X$ is the \textit{indiscrete, or trivial topology} on $X$. A consequence of this collection is that all points in the set $X$ cannot be distinguished from each other through topological means.\\\\
     Now, let's look at the first part of the problem - \\
     \textbf{Show that the underlying topology of the discrete metric is the discrete topology} \\\\
@@ -22,20 +21,17 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Question (4)}
     Now, a metric $d$ on a set $X$ induces a topology $\tau$ by taking the idea of the open balls $B(x,r) = \{y : d(x,y) < r\}$ as the bases of open sets. We need to show that the $d_{\text{discrete}}$ we are given produces the discrete topology $\tau = 2^{X}$.\\\\
     Let $x \in X$ be an arbitrary element, and let $r \in (0, 1]$; then by the definition of the discrete metric $B_d(x,r) = \{x\}$, so $\forall x \in X, \{x\}$ is an open set.\\\\
-    Now, by the axioms we discussed about topological spaces, any arbitrary union of open sets is open. Let $A \subseteq X$ be any arbitrary subset of $X$, then $A = \bigcup_{x \in A} \{x\}$, but we have shown that $\forall x \in X, \{x\}$ is an open set.
+    Now, we know that any arbitrary union of open sets is open. Let $A \subseteq X$ be any arbitrary subset of $X$, then $A = \bigcup_{x \in A} \{x\}$, but we have shown that $\forall x \in X, \{x\}$ is an open set.
 \end{frame}
 
 \begin{frame}
-    \frametitle{Question (4)}
     Since any arbitrary union of open sets is open, we can claim that $A$ is an open set, as induced by the discrete metric. Since this claim holds for any $A \subseteq X$, we thus claim that every subset of $X$ is open, i.e, $\forall A \subseteq X, A \in \tau$.\\\\
     Since $\tau$ contains every possible subset of $X$, it is the power set $2^X$ of $X$. Thus, we have shown that the discrete metric induces a topology $\tau = 2^X$ on X. Since this is the definition of the discrete topology, we have shown that the underlying topology of the discrete metric is the discrete topology. $\qedsymbol$
 \end{frame}
 
 \begin{frame}
-    \frametitle{Question (4)}
     We now look at the next part of the problem - \\
     \textbf{Show that if a set $X$ has more than one element, then the indiscrete topology on $X$ is not metrizable.}\\\\
     We prove this by contradiction. Assume that there exists a metric $d$ on the set $X$ such that $(X,d)$ is a metric space and that the topology induced by this metric on $X$ is the indiscrete topology, $\tau = \{ \emptyset , X \}$\\
@@ -45,7 +41,6 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Question (4)}
     But, $x \in B(x,r/2)$ and since $d(x,y) = r > r/2$, $y \notin B(x,r/2)$. \\\\
     Thus, $B(x,r/2) \neq \emptyset$ and $B(x,r/2) \neq X$ (as there is at least one element $y \in X$ s.t $y \notin B(x,r/2)$).\\\\
     Thus, the topology induced by the metric $d$ cannot be the indiscrete topology, since $\tau_{\text{indiscrete}} = \{\emptyset, X\}$\\\\
