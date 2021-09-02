@@ -18,13 +18,15 @@
             \(\topx\) is a Hausdorff space.
 
             For each pair \(x_i, x_j \in \topx \times \topx\), construct open
-            balls \(B_{r_i}(x_i), B_{r_j}(x_j)\) centered at the respective
-            points as induced the `metric' \(d\) such that \(r_i + r_j <
+            balls \(\textcolor{red}{B_{r_i}(x_i)},
+            \textcolor{orange}{B_{r_j}(x_j)}\) centered at the respective points
+            as induced the `metric' \(d\) such that \(r_i + r_j <
             \metric{x_i}{x_j}\). These are open sets, as \(d\), by premise,
             induces the topology on \(\topx\).
 
             We claim that these two open sets have empty intersection, i.e.,
-            \(B_{r_i}(x_i) \cap B_{r_j}(x_j) = \emptyset\). If possible, suppose
+            \(\textcolor{red}{B_{r_i}(x_i)} \cap
+            \textcolor{orange}{B_{r_j}(x_j)} = \emptyset\). If possible, suppose
             not, and we show that it leads to a contradiction. 
         \end{column}
     \end{columns}   
@@ -32,9 +34,9 @@
 \end{frame}
 
 \begin{frame}    
-    By assumption, \(\exists x \in \topx, x \in B_{r_i}(x_i) \cap
-    B_{r_j}(x_j)\). Then, since \(d\) is a well-defined metric candidate by
-    premise, it must satisfy the triangle inequality
+    By assumption, \(\exists x \in \topx, x \in \textcolor{red}{B_{r_i}(x_i)}
+    \cap \textcolor{orange}{B_{r_j}(x_j)}\). Then, since \(d\) is a well-defined
+    metric candidate by premise, it must satisfy the triangle inequality
 
     \begin{equation*}
         \metric{x_i}{x_j} \leq \metric{x_i}{x} + \metric{x}{x_j}~.
@@ -67,9 +69,11 @@
 
             Consider a point \(x_i \in \topx\). We know by the Hausdorff
             property that for any other point \(x_j \in \topx\) distinct from
-            \(x_i\) there exists a pair of neighbourhoods \((T_{ij}, T_{ji})\),
-            i.e., open sets containing, of \(x_i\) and \(x_j\) which have empty
-            intersection, i.e. \(T_{ij} \cap T_{ji} = \emptyset\).
+            \(x_i\) there exists a pair of neighbourhoods
+            \((\textcolor{red}{T_{ij}}, \textcolor{orange}{T_{ji}})\), i.e.,
+            open sets containing, of \(x_i\) and \(x_j\) which have empty
+            intersection, i.e. \(\textcolor{red}{T_{ij}} \cap
+            \textcolor{orange}{T_{ji}} = \emptyset\).
         \end{column}
     \end{columns}   
 
