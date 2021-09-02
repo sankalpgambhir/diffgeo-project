@@ -73,34 +73,39 @@
 \end{frame}
 
 \begin{frame}
-    We begin with the bound \(\delta(\epsilon)\) on \(\Delta((x, y), (x_0, y_0)\) 
+    We begin with the bound \(\delta(\epsilon)\) on \(\Delta((x, y), (x_0, y_0))\) 
     \begin{gather*}
-        \metric{x}{x_0} - \metric{y}{y_0} < \delta(\epsilon)
+        \metric{x}{x_0} + \metric{y}{y_0} < \delta(\epsilon)~.
     \end{gather*}
     \pause
-    Using the triangle inequality on \(\metric{x}{x_0}\) we get the following:
+    Using the triangle inequality on \(\metric{x}{y}\) and \(\metric{x_0}{y}\)
+    we get the following:
     \begin{gather*}
-        \metric{x}{x_0} \geq \metric{x}{y} - \metric{x_0}{y} \\
-        \text{and,}\\ \metric{x}{x_0} \geq \metric{x_0}{y} - \metric{x}{y} \\
-        \Rightarrow \metric{x}{x_0} \geq |\metric{x}{y} - \metric{x_0}{y}| 
+        \metric{x}{x_0} \geq \metric{x}{y} - \metric{x_0}{y}
+        \text{ , and,}\\ \metric{x}{x_0} \geq \metric{x_0}{y} - \metric{x}{y} \\
+        \Rightarrow \metric{x}{x_0} \geq |\metric{x}{y} - \metric{x_0}{y}|~.
     \end{gather*}
     \pause
     Similarly,
     \begin{gather*}
-        \metric{y}{y_0} \geq |\metric{x_0}{y} - \metric{x_0}{y_0}|
+        \metric{y}{y_0} \geq |\metric{x_0}{y} - \metric{x_0}{y_0}|~.
     \end{gather*}
     \pause
     Thus,
     \begin{equation*}
-        |\metric{x}{y} - \metric{x_0}{y}| + |\metric{x_0}{y} - \metric{x_0}{y_0}| \leq \metric{x}{x_0} - \metric{y}{y_0} < \delta(\epsilon)
+        |\metric{x}{y} - \metric{x_0}{y}| + |\metric{x_0}{y} - \metric{x_0}{y_0}| \leq \metric{x}{x_0} + \metric{y}{y_0} < \delta(\epsilon)~.
     \end{equation*}
 \end{frame}
 
 \begin{frame}
-    Now, employing the inequality \(|a+b|\leq |a|+|b|\), we get:
+    Now, employing the inequality \(|a-b|\leq |a|+|b|\), we get:
     \begin{equation*}
-        |\metric{x}{y} - \metric{x_0}{y_0}| < \delta(\epsilon) \\
-        \Rightarrow \delta(\epsilon) = \epsilon
+        |\metric{x}{y} - \metric{x_0}{y_0}| < \delta(\epsilon)~.
+    \end{equation*}
+
+    By choosing \(\delta(\epsilon) = \epsilon\), we obtain the required condition 
+    \begin{equation*}
+        |\metric{x}{y} - \metric{x_0}{y_0}| < \epsilon~.
     \end{equation*}
 
     Thus we have shown that for a given \(\epsilon\), there exists a \(\delta (= \epsilon\)) such that 
